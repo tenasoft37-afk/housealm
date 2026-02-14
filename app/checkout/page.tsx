@@ -398,9 +398,9 @@ Payment Method: Cash on Delivery`;
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="mx-auto max-w-7xl">
-              <div className="grid gap-6 lg:gap-8 lg:grid-cols-[60%_40%]">
+              <div className="grid gap-6 lg:gap-8 lg:grid-cols-5">
                 {/* Left Column: Customer Information */}
-                <div className="space-y-8 bg-white border border-neutral-100 -mx-4 px-4 py-8 sm:px-6 lg:mx-0 lg:px-8 lg:py-10 rounded-3xl shadow-sm">
+                <div className="lg:col-span-3 space-y-8 bg-white border border-neutral-100 px-4 py-8 sm:px-6 lg:px-8 lg:py-10 rounded-3xl shadow-sm">
                   {/* Customer Information Section */}
                   <div>
                     <h2 className="mb-8 text-xl font-medium text-[#5B3A82] flex items-center gap-2">
@@ -674,7 +674,7 @@ Payment Method: Cash on Delivery`;
                 </div>
 
                 {/* Right Column: Order Summary & Payment - Desktop */}
-                <div className="hidden lg:block lg:sticky lg:top-24 lg:self-start">
+                <div className="hidden lg:block lg:col-span-2 lg:sticky lg:top-24 lg:self-start">
                   <div className="rounded-3xl border border-neutral-100 bg-white shadow-xl p-8">
                     <h2 className="mb-8 text-xl font-medium text-[#5B3A82]">
                       Order Summary
