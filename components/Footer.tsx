@@ -98,7 +98,7 @@ const SocialIcon = ({
 
 const Footer = () => (
   <>
-    <footer className="relative mt-20 md:mt-28 overflow-hidden">
+    <footer className="relative pt-20 md:pt-28 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-[#F7F7F7] dark:from-neutral-900/80 dark:via-neutral-800/60 dark:to-neutral-900/80" />
 
