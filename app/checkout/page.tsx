@@ -366,7 +366,7 @@ Payment Method: Cash on Delivery`;
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAFAFA]">
+    <div className="min-h-[100dvh] flex flex-col bg-[#FAFAFA]">
       <Navbar />
       <main className="flex-1 pt-24 md:pt-28 lg:pt-32">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -423,7 +423,7 @@ Payment Method: Cash on Delivery`;
                           name="fullName"
                           value={formData.fullName}
                           onChange={handleInputChange}
-                          className={`w-full rounded-xl border bg-white px-5 py-3.5 text-neutral-900 placeholder:text-neutral-300 transition-all focus:border-[#5B3A82] focus:outline-none focus:ring-1 focus:ring-[#5B3A82] ${errors.fullName ? "border-red-300" : "border-neutral-200"
+                          className={`w-full rounded-xl border bg-white px-5 py-3.5 text-base text-neutral-900 placeholder:text-neutral-300 transition-all focus:border-[#5B3A82] focus:outline-none focus:ring-1 focus:ring-[#5B3A82] ${errors.fullName ? "border-red-300" : "border-neutral-200"
                             }`}
                           placeholder="Your legal name"
                         />
@@ -450,7 +450,7 @@ Payment Method: Cash on Delivery`;
                           onChange={handlePhoneInputChange}
                           onBlur={handlePhoneBlur}
                           onKeyDown={handlePhoneKeyDown}
-                          className={`w-full rounded-xl border bg-white px-5 py-3.5 text-neutral-900 placeholder:text-neutral-300 transition-all focus:border-[#5B3A82] focus:outline-none focus:ring-1 focus:ring-[#5B3A82] ${errors.phoneNumber
+                          className={`w-full rounded-xl border bg-white px-5 py-3.5 text-base text-neutral-900 placeholder:text-neutral-300 transition-all focus:border-[#5B3A82] focus:outline-none focus:ring-1 focus:ring-[#5B3A82] ${errors.phoneNumber
                             ? "border-red-300"
                             : "border-neutral-200"
                             }`}
@@ -486,7 +486,7 @@ Payment Method: Cash on Delivery`;
                           name="country"
                           value={formData.country}
                           onChange={handleInputChange}
-                          className="w-full rounded-xl border border-neutral-200 bg-neutral-50 px-5 py-3.5 text-neutral-900 cursor-not-allowed opacity-70"
+                          className="w-full rounded-xl border border-neutral-200 bg-neutral-50 px-5 py-3.5 text-base text-neutral-900 cursor-not-allowed opacity-70"
                           disabled
                         >
                           <option value="Lebanon">Lebanon</option>
@@ -507,7 +507,7 @@ Payment Method: Cash on Delivery`;
                             name="governorate"
                             value={formData.governorate}
                             onChange={handleInputChange}
-                            className={`w-full rounded-xl border bg-white px-5 py-3.5 text-neutral-900 appearance-none focus:border-[#5B3A82] focus:outline-none focus:ring-1 focus:ring-[#5B3A82] ${errors.governorate
+                            className={`w-full rounded-xl border bg-white px-5 py-3.5 text-base text-neutral-900 appearance-none focus:border-[#5B3A82] focus:outline-none focus:ring-1 focus:ring-[#5B3A82] ${errors.governorate
                               ? "border-red-300"
                               : "border-neutral-200"
                               }`}
@@ -543,7 +543,7 @@ Payment Method: Cash on Delivery`;
                             value={formData.district}
                             onChange={handleInputChange}
                             disabled={!formData.governorate}
-                            className={`w-full rounded-xl border bg-white px-5 py-3.5 text-neutral-900 appearance-none disabled:bg-neutral-50 disabled:cursor-not-allowed focus:border-[#5B3A82] focus:outline-none focus:ring-1 focus:ring-[#5B3A82] ${errors.district
+                            className={`w-full rounded-xl border bg-white px-5 py-3.5 text-base text-neutral-900 appearance-none disabled:bg-neutral-50 disabled:cursor-not-allowed focus:border-[#5B3A82] focus:outline-none focus:ring-1 focus:ring-[#5B3A82] ${errors.district
                               ? "border-red-300"
                               : "border-neutral-200"
                               }`}
@@ -582,7 +582,7 @@ Payment Method: Cash on Delivery`;
                           name="city"
                           value={formData.city}
                           onChange={handleInputChange}
-                          className={`w-full rounded-xl border bg-white px-5 py-3.5 text-neutral-900 placeholder:text-neutral-300 focus:border-[#5B3A82] focus:outline-none focus:ring-1 focus:ring-[#5B3A82] ${errors.city ? "border-red-300" : "border-neutral-200"
+                          className={`w-full rounded-xl border bg-white px-5 py-3.5 text-base text-neutral-900 placeholder:text-neutral-300 focus:border-[#5B3A82] focus:outline-none focus:ring-1 focus:ring-[#5B3A82] ${errors.city ? "border-red-300" : "border-neutral-200"
                             }`}
                           placeholder="e.g. Beirut"
                         />
@@ -617,7 +617,7 @@ Payment Method: Cash on Delivery`;
                           name="streetName"
                           value={formData.streetName}
                           onChange={handleInputChange}
-                          className={`w-full rounded-xl border bg-white px-5 py-3.5 text-neutral-900 placeholder:text-neutral-300 focus:border-[#5B3A82] focus:outline-none focus:ring-1 focus:ring-[#5B3A82] ${errors.streetName
+                          className={`w-full rounded-xl border bg-white px-5 py-3.5 text-base text-neutral-900 placeholder:text-neutral-300 focus:border-[#5B3A82] focus:outline-none focus:ring-1 focus:ring-[#5B3A82] ${errors.streetName
                             ? "border-red-300"
                             : "border-neutral-200"
                             }`}
@@ -644,7 +644,7 @@ Payment Method: Cash on Delivery`;
                           name="buildingName"
                           value={formData.buildingName}
                           onChange={handleInputChange}
-                          className="w-full rounded-xl border border-neutral-200 bg-white px-5 py-3.5 text-neutral-900 placeholder:text-neutral-300 focus:border-[#5B3A82] focus:outline-none focus:ring-1 focus:ring-[#5B3A82]"
+                          className="w-full rounded-xl border border-neutral-200 bg-white px-5 py-3.5 text-base text-neutral-900 placeholder:text-neutral-300 focus:border-[#5B3A82] focus:outline-none focus:ring-1 focus:ring-[#5B3A82]"
                           placeholder="Building, floor, apartment"
                         />
                       </div>
