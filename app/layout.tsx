@@ -63,6 +63,11 @@ export const metadata: Metadata = {
     "bespoke jewelry Lebanon",
     "House of Almas",
   ],
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
   openGraph: {
     title: "House of Almas | Fine jewelry & Bespoke Designs",
     description:
