@@ -274,7 +274,7 @@ Payment Method: Cash on Delivery`;
       // Step 1: Send to WhatsApp (existing flow)
       const message = formatWhatsAppMessage();
       const encodedMessage = encodeURIComponent(message);
-      const whatsappUrl = `https://wa.me/96103161091?text=${encodedMessage}`;
+      const whatsappUrl = `https://wa.me/96100000000?text=${encodedMessage}`;
 
       // Open WhatsApp
       window.open(whatsappUrl, "_blank");
@@ -454,7 +454,7 @@ Payment Method: Cash on Delivery`;
                             ? "border-red-300"
                             : "border-neutral-200"
                             }`}
-                          placeholder="+961 70 123 456"
+                          placeholder="+961 00 000 000"
                         />
                         {errors.phoneNumber && (
                           <p className="mt-1.5 text-xs text-red-500">

@@ -55,19 +55,18 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "L C Organic | Organic Skincare in Lebanon",
+  title: "House of Almas | Fine jewelry & Bespoke Designs",
   description:
-    "Lebanon-based organic skincare brand focused on clean formulas that support healthy, balanced skin.",
+    "Lebanon-based fine jewelry brand focused on unique designs and high-quality materials.",
   keywords: [
-    "organic skincare Lebanon",
-    "natural skincare Lebanon",
-    "clean skincare Lebanon",
-    "L C Organic",
+    "fine jewelry Lebanon",
+    "bespoke jewelry Lebanon",
+    "House of Almas",
   ],
   openGraph: {
-    title: "L C Organic | Organic Skincare in Lebanon",
+    title: "House of Almas | Fine jewelry & Bespoke Designs",
     description:
-      "Clean, effective organic skincare designed to support skin balance and long-lasting results.",
+      "Lebanon-based fine jewelry brand focused on unique designs and high-quality materials.",
     type: "website",
   },
 };

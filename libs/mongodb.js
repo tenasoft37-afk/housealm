@@ -36,10 +36,10 @@ export async function getClient() {
 // Export a function to get the database
 export async function getDb() {
   const client = await clientPromise;
-  
+
   // Extract database name from DATABASE_URL if not set
   let dbName = process.env.MONGODB_DB;
-  
+
   if (!dbName && process.env.DATABASE_URL) {
     // Extract from URL: mongodb+srv://user:pass@host/dbname?params
     const urlParts = process.env.DATABASE_URL.split('?')[0].split('/');
@@ -47,9 +47,9 @@ export async function getDb() {
       dbName = urlParts[urlParts.length - 1];
     }
   }
-  
-  dbName = dbName || 'lcorganic'; // default to lcorganic
-  
+
+  dbName = dbName || 'houseofalmas'; // default to houseofalmas
+
   return client.db(dbName);
 }
 

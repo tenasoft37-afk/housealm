@@ -43,7 +43,7 @@ export default function ShopNow() {
           alt="Shop Now"
           fill
           priority
-          className="object-cover"
+          className="object-cover md:object-[center_15%]"
         />
       </div>
 

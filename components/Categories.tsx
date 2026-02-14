@@ -66,9 +66,8 @@ export default function Categories() {
             {[1, 2, 3, 4, 5].map((i) => (
               <div
                 key={i}
-                className={`group relative overflow-hidden rounded-lg bg-neutral-200 animate-pulse ${
-                  i === 1 ? "md:row-span-2" : ""
-                }`}
+                className={`group relative overflow-hidden rounded-lg bg-neutral-200 animate-pulse ${i === 1 ? "md:row-span-2" : ""
+                  }`}
               />
             ))}
           </div>
@@ -98,13 +97,13 @@ export default function Categories() {
               href={getCategoryHref(categories[0].name)}
               className="group relative h-[600px] overflow-hidden rounded-lg"
             >
-            <Image
-              src={categories[0].image || "/placeholder.svg"}
-              alt={categories[0].name}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
-              unoptimized={categories[0].image?.startsWith('http')}
-            />
+              <Image
+                src={categories[0].image || "/placeholder.svg"}
+                alt={categories[0].name}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                unoptimized={categories[0].image?.startsWith('http')}
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               <div className="absolute bottom-4 right-4 rounded-sm bg-white px-4 py-2 shadow-lg transition-transform duration-300 group-hover:scale-105">
                 <span className="text-sm font-medium text-foreground">{categories[0].name}</span>
@@ -119,13 +118,13 @@ export default function Categories() {
               href={getCategoryHref(categories[1].name)}
               className="group relative h-[300px] overflow-hidden rounded-lg"
             >
-            <Image
-              src={categories[1].image || "/placeholder.svg"}
-              alt={categories[1].name}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
-              unoptimized={categories[1].image?.startsWith('http')}
-            />
+              <Image
+                src={categories[1].image || "/placeholder.svg"}
+                alt={categories[1].name}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                unoptimized={categories[1].image?.startsWith('http')}
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               <div className="absolute bottom-4 right-4 rounded-sm bg-white px-4 py-2 shadow-lg transition-transform duration-300 group-hover:scale-105">
                 <span className="text-sm font-medium text-foreground">{categories[1].name}</span>
@@ -180,13 +179,13 @@ export default function Categories() {
               href={getCategoryHref(categories[4].name)}
               className="group relative h-[300px] overflow-hidden rounded-lg"
             >
-            <Image
-              src={categories[4].image || "/placeholder.svg"}
-              alt={categories[4].name}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
-              unoptimized={categories[4].image?.startsWith('http')}
-            />
+              <Image
+                src={categories[4].image || "/placeholder.svg"}
+                alt={categories[4].name}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                unoptimized={categories[4].image?.startsWith('http')}
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               <div className="absolute bottom-4 right-4 rounded-sm bg-white px-4 py-2 shadow-lg transition-transform duration-300 group-hover:scale-105">
                 <span className="text-sm font-medium text-foreground">{categories[4].name}</span>
@@ -201,7 +200,7 @@ export default function Categories() {
             <Link
               key={category.id}
               href={getCategoryHref(category.name)}
-              className={`group relative overflow-hidden rounded-lg ${index === 0 ? "md:row-span-2" : ""}`}
+              className={`group relative overflow-hidden rounded-lg ${index === 0 || category.name === "Earrings" ? "md:row-span-2" : ""}`}
             >
               <Image
                 src={category.image || "/placeholder.svg"}

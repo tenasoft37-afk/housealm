@@ -152,13 +152,13 @@ export default function CommunityGrid() {
                         {/* Instagram Handle */}
                         <div className="text-center">
                             <a
-                                href={`https://instagram.com/${instagramData?.accountName || 'l_c_organic'}`}
+                                href={`https://instagram.com/${instagramData?.accountName || 'thehouseofalmas'}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-block"
                             >
                                 <span className="text-lg text-[#5B3A82] hover:text-[#4a2e6b] border-b border-[#C8A2C8] pb-0.5">
-                                    @{instagramData?.accountName || 'l_c_organic'}
+                                    @{instagramData?.accountName || 'thehouseofalmas'}
                                 </span>
                             </a>
                         </div>

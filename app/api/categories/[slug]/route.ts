@@ -20,7 +20,7 @@ export async function GET(
       category = {
         _id: 'all',
         name: 'All Products',
-        description: 'Discover our complete range of organic skin care products.',
+        description: 'Discover our complete range of fine jewelry & bespoke designs.',
         image: '/sho.png', // Fallback image
       };
 
@@ -59,9 +59,9 @@ export async function GET(
       // Get products for this category
       const productsCollection = db.collection('Product');
 
-      // Match products by category name (Product.category is a String matching HouseofAlmasCategory.name)
+      // Match products where categories array contains the category name
       products = await productsCollection
-        .find({ category: category.name })
+        .find({ categories: category.name })
         .sort({ createdAt: -1 })
         .toArray();
     }

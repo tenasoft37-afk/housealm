@@ -77,7 +77,7 @@ export default function CommunityModal({ post, isOpen, onClose, onPrevious, onNe
                             />
                         </div>
                     </div>
-                    <span className="font-medium text-neutral-800">{accountName || 'l_c_organic'}</span>
+                    <span className="font-medium text-neutral-800">{accountName || 'houseofalmas'}</span>
                 </div>
 
                 {/* Media Container - object-contain on mobile to prevent cropping */}

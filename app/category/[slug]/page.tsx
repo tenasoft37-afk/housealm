@@ -175,51 +175,59 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             ) : (
               <div className="grid grid-cols-2 gap-x-6 gap-y-12 md:grid-cols-3 lg:grid-cols-4">
                 {sortedProducts.map((product) => (
-                  <div key={product.id} className="group flex flex-col">
+                  <div key={product.id} className="block group/card h-full">
                     {/* Product Image */}
-                    <div className="relative aspect-square w-full mb-3 pt-4">
+                    <div className="relative w-full aspect-[3/4] md:aspect-square mb-3 pt-2 md:pt-0">
                       <Link href={`/products/${product.slug}`}>
                         <Image
                           src={product.image || "/placeholder.svg"}
                           alt={product.name}
                           fill
-                          className="object-contain transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 20vw"
+                          className="object-contain transition-transform duration-500 group-hover/card:scale-105"
                           unoptimized={product.image?.startsWith('http')}
                         />
                       </Link>
 
                       {/* Sale Badge */}
                       {product.enableSale && product.salePrice && (
-                        <div className="absolute left-3 top-3 z-10 rounded bg-[#5B3A82] px-2 py-1 text-[10px] uppercase font-bold tracking-wider text-white">
+                        <div className="absolute left-2 top-2 z-10 rounded bg-[#5B3A82] px-1.5 py-0.5 text-[9px] uppercase font-bold tracking-wider text-white">
                           Sale
                         </div>
                       )}
                     </div>
 
-                    {/* Product Info - Centered as per image */}
-                    <div className="mt-5 flex flex-col items-center text-center gap-1 w-full px-2">
+                    {/* Product Info */}
+                    <div className="text-center px-1">
                       <Link href={`/products/${product.slug}`}>
-                        <h3 className="text-sm sm:text-lg font-normal text-[#5B3A82] tracking-tight leading-tight truncate w-full">
+                        <h3
+                          className="text-[13px] md:text-base leading-tight mb-1 line-clamp-2 min-h-[2.5em] font-sans"
+                          style={{
+                            color: "#5B3A82",
+                            fontWeight: 400,
+                          }}
+                        >
                           {product.name}
                         </h3>
                       </Link>
 
                       {/* Price and Cart */}
                       <div className="flex items-center justify-center gap-2 mt-1">
-                        {product.enableSale && product.salePrice ? (
-                          <div className="flex items-center gap-2">
-                            <p className="text-sm text-neutral-400 line-through">
-                              ${product.originalPrice?.toLocaleString()}
-                            </p>
-                            <p className="text-md font-normal text-[#5B3A82]/80">
+                        <p
+                          className="text-[13px] md:text-sm font-sans"
+                          style={{ color: "#888888" }}
+                        >
+                          {product.enableSale && product.salePrice ? (
+                            <>
+                              <span className="line-through text-xs mr-1 opacity-70">
+                                ${product.originalPrice?.toLocaleString()}
+                              </span>
                               ${product.salePrice.toLocaleString()}
-                            </p>
-                          </div>
-                        ) : (
-                          <p className="text-md font-normal text-[#5B3A82]/80">
-                            ${product.price.toLocaleString()}
-                          </p>
-                        )}
+                            </>
+                          ) : (
+                            `$${product.price.toLocaleString()}`
+                          )}
+                        </p>
 
                         <button
                           type="button"
