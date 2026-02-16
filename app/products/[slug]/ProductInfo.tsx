@@ -4,7 +4,10 @@ import { useState } from "react";
 import QuantitySelector from "./QuantitySelector";
 import AddToCartNotification from "@/components/AddToCartNotification";
 import { useCart } from "@/contexts/CartContext";
-import { ChevronDown, Leaf, MessageCircleQuestion, Sparkles } from "lucide-react";
+import EnquireModal from "@/components/EnquireModal";
+import BookingModal from "@/components/BookingModal";
+import { ChevronDown, Leaf, MessageCircleQuestion, Sparkles, ConciergeBell, Phone } from "lucide-react";
+import { CiCircleInfo } from "react-icons/ci";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface ProductInfoProps {
@@ -25,6 +28,7 @@ interface ProductInfoProps {
     options?: {
       [key: string]: string[];
     };
+    category?: string;
   };
 }
 
@@ -96,6 +100,10 @@ export default function ProductInfo({ product }: ProductInfoProps) {
   // Accordion states
   const [openSection, setOpenSection] = useState<string | null>(null);
 
+  // Modal states
+  const [isEnquireModalOpen, setIsEnquireModalOpen] = useState(false);
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+
   const toggleSection = (section: string) => {
     setOpenSection(openSection === section ? null : section);
   };
@@ -157,6 +165,30 @@ export default function ProductInfo({ product }: ProductInfoProps) {
 
   return (
     <>
+      {/* Enquire Modal */}
+      <EnquireModal
+        isOpen={isEnquireModalOpen}
+        onClose={() => setIsEnquireModalOpen(false)}
+        product={{
+          title: product.title,
+          image: product.image,
+          sku: product.sku,
+          material: product.category || "",
+        }}
+      />
+
+      {/* Booking Modal */}
+      <BookingModal
+        isOpen={isBookingModalOpen}
+        onClose={() => setIsBookingModalOpen(false)}
+        product={{
+          title: product.title,
+          image: product.image,
+          sku: product.sku,
+          category: product.category || "",
+        }}
+      />
+
       {/* Notification */}
       {showNotification && (
         <AddToCartNotification
@@ -172,13 +204,13 @@ export default function ProductInfo({ product }: ProductInfoProps) {
 
       <div className="flex flex-col">
 
-        {/* Title - Large Purple */}
-        <h1 className="mb-2 font-serif text-4xl font-normal tracking-wide text-[#5B3A82] md:text-5xl lg:text-[3.25rem] leading-[1.1]">
+        {/* Title - Refined for Professional Look */}
+        <h1 className="mb-4 font-serif text-3xl md:text-4xl font-normal tracking-normal text-[#5B3A82] leading-tight">
           {product.title}
         </h1>
 
         {/* Price - Standard Gray/Purple */}
-        <div className="mb-8">
+        {/* <div className="mb-8">
           {product.enableSale && product.salePrice ? (
             <div className="flex items-center gap-3">
               <p className="text-xl font-light text-neutral-400 line-through">
@@ -193,7 +225,7 @@ export default function ProductInfo({ product }: ProductInfoProps) {
               ${product.price.toFixed(2)}
             </p>
           )}
-        </div>
+        </div> */}
 
         {/* Divider */}
         <div className="mb-8 h-px w-full bg-neutral-200" />
@@ -203,6 +235,39 @@ export default function ProductInfo({ product }: ProductInfoProps) {
           <p className="text-[15px] leading-relaxed text-neutral-600 font-light">
             {product.description}
           </p>
+        </div>
+
+        {/* Divider */}
+        <div className="mb-8 h-px w-full bg-neutral-200" />
+
+        {/* Action Links */}
+        <div className="mb-8 space-y-5">
+          <button
+            onClick={() => setIsEnquireModalOpen(true)}
+            className="flex items-center gap-4 text-[13px] font-light uppercase tracking-[0.15em] text-[#5B3A82] hover:opacity-70 transition-opacity group"
+            style={{ fontFamily: 'var(--font-libre-franklin)' }}
+          >
+            <CiCircleInfo className="h-[22px] w-[22px] text-[#5B3A82]" strokeWidth={0.5} />
+            <span>Enquire</span>
+          </button>
+
+          <button
+            onClick={() => setIsBookingModalOpen(true)}
+            className="flex items-center gap-4 text-[13px] font-light uppercase tracking-[0.15em] text-[#5B3A82] hover:opacity-70 transition-opacity group"
+            style={{ fontFamily: 'var(--font-libre-franklin)' }}
+          >
+            <ConciergeBell className="h-[20px] w-[20px] text-[#5B3A82]" strokeWidth={1.5} />
+            <span>Appointment Booking</span>
+          </button>
+
+          <a
+            href="tel:+971501916610"
+            className="flex items-center gap-4 text-[13px] font-light uppercase tracking-[0.15em] text-[#5B3A82] hover:opacity-70 transition-opacity group"
+            style={{ fontFamily: 'var(--font-libre-franklin)' }}
+          >
+            <Phone className="h-[20px] w-[20px] text-[#5B3A82]" strokeWidth={1.5} />
+            <span>Order by Phone</span>
+          </a>
         </div>
 
         {/* Accordions */}
@@ -282,7 +347,7 @@ export default function ProductInfo({ product }: ProductInfoProps) {
         )}
 
         {/* Actions Row */}
-        {product.stock > 0 && (
+        {/* {product.stock > 0 && (
           <div className="flex items-center gap-4">
             <QuantitySelector
               quantity={quantity}
@@ -297,7 +362,7 @@ export default function ProductInfo({ product }: ProductInfoProps) {
               Add to cart
             </button>
           </div>
-        )}
+        )} */}
       </div>
     </>
   );

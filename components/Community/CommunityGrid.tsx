@@ -21,6 +21,9 @@ export default function CommunityGrid() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [activePostId, setActivePostId] = useState<string | null>(null);
 
+    const [email, setEmail] = useState("");
+    const [joinStatus, setJoinStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
     // Fetch Instagram data from API
     useEffect(() => {
         const fetchInstagramData = async () => {
@@ -75,6 +78,32 @@ export default function CommunityGrid() {
         }
     };
 
+    const handleJoin = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setJoinStatus('loading');
+
+        try {
+            const response = await fetch("/api/send-enquiry", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    email,
+                    type: "Community Join"
+                }),
+            });
+
+            if (!response.ok) throw new Error("Failed to join");
+
+            setJoinStatus('success');
+            setEmail("");
+            setTimeout(() => setJoinStatus('idle'), 3000);
+        } catch (err) {
+            console.error(err);
+            setJoinStatus('error');
+            setTimeout(() => setJoinStatus('idle'), 3000);
+        }
+    };
+
     return (
         <section className="w-full py-12 md:py-16 bg-white">
             <div className="max-w-7xl mx-auto px-4">
@@ -86,17 +115,33 @@ export default function CommunityGrid() {
                     </h2>
 
                     {/* Newsletter Form */}
-                    <div className="w-full max-w-xl space-y-4 mb-12">
-                        <input
-                            type="email"
-                            placeholder="E-mail"
-                            className="w-full px-6 py-3 rounded-full border border-gray-200 focus:outline-none focus:border-[#5B3A82] text-gray-600 placeholder:text-gray-400"
-                        />
-                        <button className="w-full bg-[#5B3A82] text-white rounded-full py-3 px-6 flex items-center justify-center gap-2 hover:bg-[#4a2e6b] transition-colors group">
-                            <span>Join</span>
+                    <form onSubmit={handleJoin} className="w-full max-w-xl space-y-4 mb-12">
+                        <div className="relative">
+                            <input
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                placeholder="E-mail"
+                                required
+                                className="w-full px-6 py-3 rounded-full border border-gray-200 focus:outline-none focus:border-[#5B3A82] text-gray-600 placeholder:text-gray-400 disabled:opacity-50"
+                                disabled={joinStatus === 'loading' || joinStatus === 'success'}
+                            />
+                            {joinStatus === 'success' && (
+                                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-green-600 text-sm font-medium">Joined!</span>
+                            )}
+                            {joinStatus === 'error' && (
+                                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-red-600 text-sm font-medium">Error</span>
+                            )}
+                        </div>
+                        <button
+                            type="submit"
+                            disabled={joinStatus === 'loading' || joinStatus === 'success'}
+                            className="w-full bg-[#5B3A82] text-white rounded-full py-3 px-6 flex items-center justify-center gap-2 hover:bg-[#4a2e6b] transition-colors group disabled:opacity-70"
+                        >
+                            <span>{joinStatus === 'loading' ? 'Joining...' : 'Join'}</span>
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </button>
-                    </div>
+                    </form>
                 </div>
 
                 {/* Loading State */}

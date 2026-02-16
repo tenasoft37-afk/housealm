@@ -336,7 +336,7 @@ export default function FeaturedProducts() {
                     </Link>
 
                     {/* Price and Cart */}
-                    <div className="flex items-center justify-center gap-2 mt-1">
+                    {/* <div className="flex items-center justify-center gap-2 mt-1">
                       <p
                         className="text-[13px] md:text-sm font-sans"
                         style={{ color: PRICE_COLOR }}
@@ -379,7 +379,7 @@ export default function FeaturedProducts() {
                       >
                         <ShoppingBag className="w-4 h-4 md:w-5 md:h-5" strokeWidth={1.5} />
                       </button>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

@@ -64,10 +64,7 @@ export default function AnnouncementBar({ scrolled = false }: AnnouncementBarPro
 
     return (
         <div
-            className={`transition-colors duration-300 w-full relative z-[60] border-b ${scrolled
-                ? "bg-[#F4F4F0] border-neutral-200/50"
-                : "bg-transparent border-white/10"
-                }`}
+            className={`transition-colors duration-300 w-full relative z-[60] border-b bg-[#F4F4F0] border-neutral-200/50`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -75,10 +72,7 @@ export default function AnnouncementBar({ scrolled = false }: AnnouncementBarPro
                 {/* Left Arrow */}
                 <button
                     onClick={handlePrev}
-                    className={`p-2 transition-colors ${scrolled
-                        ? "text-neutral-500 hover:text-[#0E4D5D]"
-                        : "text-white/70 hover:text-white"
-                        }`}
+                    className={`p-2 transition-colors text-neutral-500 hover:text-[#0E4D5D]`}
                     aria-label="Previous announcement"
                 >
                     <ChevronLeft size={16} strokeWidth={1.5} />
@@ -93,8 +87,7 @@ export default function AnnouncementBar({ scrolled = false }: AnnouncementBarPro
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -5 }}
                             transition={{ duration: 0.3 }}
-                            className={`text-[11px] sm:text-[12px] tracking-[0.2em] uppercase text-center truncate px-4 font-namdhinggo transition-colors duration-300 ${scrolled ? "text-[#0E4D5D]" : "text-white"
-                                }`}
+                            className={`text-[11px] sm:text-[12px] tracking-[0.2em] uppercase text-center truncate px-4 font-namdhinggo transition-colors duration-300 text-[#0E4D5D]`}
                         >
                             {announcements[currentIndex]}
                         </motion.p>
@@ -104,10 +97,7 @@ export default function AnnouncementBar({ scrolled = false }: AnnouncementBarPro
                 {/* Right Arrow */}
                 <button
                     onClick={handleNext}
-                    className={`p-2 transition-colors ${scrolled
-                        ? "text-neutral-500 hover:text-[#0E4D5D]"
-                        : "text-white/70 hover:text-white"
-                        }`}
+                    className={`p-2 transition-colors text-neutral-500 hover:text-[#0E4D5D]`}
                     aria-label="Next announcement"
                 >
                     <ChevronRight size={16} strokeWidth={1.5} />

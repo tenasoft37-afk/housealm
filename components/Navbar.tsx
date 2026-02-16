@@ -5,11 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, Facebook, Instagram, PanelsTopLeft } from "lucide-react";
+import { Search, Menu, X, Phone, Facebook, Instagram } from "lucide-react";
 import { SiTiktok, SiWhatsapp } from "react-icons/si";
-import { useCart } from "@/contexts/CartContext";
-import CartDrawer from "./CartDrawer";
-import AnnouncementBar from "./AnnouncementBar";
+import SearchOverlay from "./SearchOverlay";
 
 interface Category {
   id: string;
@@ -18,10 +16,11 @@ interface Category {
 }
 
 export default function Navbar() {
-  const { cartCount } = useCart();
+  // const { cartCount } = useCart();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [cartDrawerOpen, setCartDrawerOpen] = useState(false);
+  // const [cartDrawerOpen, setCartDrawerOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isNavbarHidden, setIsNavbarHidden] = useState(false);
   const [categories, setCategories] = useState<Category[]>([]);
   const lastScrollYRef = useRef(0);
@@ -122,80 +121,17 @@ export default function Navbar() {
         y: isNavbarHidden ? -120 : 0
       }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isContactPage || isCategoryPage || isProductPage || isCartPage || isCheckoutPage
-        ? 'bg-white dark:bg-neutral-900 shadow-sm'
-        : scrolled
-          ? 'bg-white/90 dark:bg-neutral-900/90 backdrop-blur-lg shadow-lg'
-          : 'bg-transparent'
-        } ${isNavbarHidden ? 'pointer-events-none' : ''}`}
+      className={`border-t-[5px] border-[#5B3A82] sticky top-0 left-0 w-full z-50 transition-all duration-300 bg-white dark:bg-neutral-900 shadow-sm ${isNavbarHidden ? 'pointer-events-none' : ''}`}
     >
-      <AnimatePresence>
-        {!scrolled && (
-          <motion.div
-            initial={{ height: 44, opacity: 1 }}
-            animate={{ height: 44, opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden"
-          >
-            <AnnouncementBar scrolled={false} />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Announcement Bar Removed */}
 
       <nav
-        className={`mx-auto flex max-w-7xl items-center justify-between px-4 ${isContactPage || isCategoryPage || isProductPage || isCartPage || isCheckoutPage ? "py-2" : scrolled ? "py-2" : "py-2.5"
-          } md:px-8 transition-[padding] duration-300 ${isContactPage || isCategoryPage || isProductPage || isCartPage || isCheckoutPage
-            ? "text-neutral-900 dark:text-white"
-            : scrolled
-              ? "text-neutral-900 dark:text-white"
-              : "text-white"
-          }`}
+        className={`mx-auto flex max-w-7xl items-center justify-between px-4 py-2 md:px-8 transition-[padding] duration-300 text-neutral-900 dark:text-white`}
       >
         {/* Left: Logo + Name */}
         <Link href="/" className="flex items-center relative">
           {/* Glow effect for dark backgrounds */}
-          {!isContactPage && !isCategoryPage && !isProductPage && !isCartPage && !isCheckoutPage && !scrolled && (
-            <div
-              className="absolute inset-0 pointer-events-none flex items-center justify-center"
-              style={{
-                zIndex: 0
-              }}
-            >
-              {/* Glow layers */}
-              <div
-                className="absolute"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  filter: 'blur(25px)',
-                  transform: 'scale(1.6)',
-                  opacity: 0.9,
-                  background: 'radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, transparent 100%)',
-                }}
-              />
-              <div
-                className="absolute"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  filter: 'blur(15px)',
-                  transform: 'scale(1.3)',
-                  opacity: 0.7,
-                }}
-              >
-                <Image
-                  src="/logo1.png"
-                  alt="House of Almas Logo"
-                  width={150}
-                  height={150}
-                  className="h-28 w-28 md:h-32 md:w-32 lg:h-40 lg:w-40 xl:h-44 xl:w-44 object-contain brightness-[3] contrast-150"
-                  aria-hidden="true"
-                  unoptimized
-                />
-              </div>
-            </div>
-          )}
+          {/* Glow effect removed as we now have solid background */}
           <Image
             src="/logo1.png"
             alt="House of Almas Logo"
@@ -203,124 +139,29 @@ export default function Navbar() {
             height={150}
             priority
             sizes="(max-width: 768px) 112px, (max-width: 1024px) 128px, (max-width: 1280px) 160px, 176px"
-            className={`${isContactPage || isCategoryPage || isProductPage || isCartPage || isCheckoutPage
-              ? "h-16 w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 xl:h-28 xl:w-28"
-              : scrolled
-                ? "h-16 w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 xl:h-28 xl:w-28"
-                : "h-20 w-20 md:h-24 md:w-24 lg:h-28 lg:w-28 xl:h-32 xl:w-32"
-              } object-contain transition-all duration-300 relative z-10 cursor-pointer`}
+            className={`h-16 w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 xl:h-28 xl:w-28 object-contain transition-all duration-300 relative z-10 cursor-pointer`}
           />
         </Link>
 
-        {/* Center: Empty space for logo centering */}
-        <div className="hidden md:block"></div>
-
-        {/* Right: Cart + Phone + Social icons + Hamburger (desktop) */}
-        <div className="hidden items-center gap-4 md:flex">
+        {/* Right: Search + Menu (Desktop & Mobile combined layout) */}
+        <div className="flex items-center gap-6">
           <button
-            onClick={() => setCartDrawerOpen(true)}
-            className="relative inline-flex items-center justify-center p-2 rounded-full transition-opacity duration-200 hover:opacity-70"
-            aria-label="Open cart"
+            aria-label="Search"
+            className="text-[#5B3A82] hover:opacity-70 transition-opacity"
+            onClick={() => setIsSearchOpen(true)}
           >
-            <Image
-              src="/cart.png"
-              alt="Cart"
-              width={40}
-              height={40}
-              className={`h-10 w-10 object-contain transition-all duration-200 ${isContactPage || isCategoryPage || isProductPage || isCartPage || isCheckoutPage
-                ? "brightness-0"
-                : scrolled
-                  ? "brightness-0"
-                  : ""
-                }`}
-            />
-            {cartCount > 0 && (
-              <span className="absolute right-1 top-1 flex h-5 w-5 items-center justify-center rounded-full bg-black text-xs font-medium text-white">
-                {cartCount > 99 ? "99+" : cartCount}
-              </span>
-            )}
+            <Search size={22} strokeWidth={1.5} />
           </button>
-          <div className={`flex items-center gap-3 border-l pl-3 ${isContactPage || isCategoryPage || isProductPage || isCartPage || isCheckoutPage || scrolled
-            ? "border-neutral-200"
-            : "border-white/10"
-            }`}>
-            <a
-              href="tel:+96100000000"
-              className={`inline-flex items-center justify-center p-2 transition-opacity duration-200 hover:opacity-70 ${isContactPage || isCategoryPage || isProductPage || isCartPage || isCheckoutPage || scrolled
-                ? "text-neutral-900"
-                : "text-white"
-                }`}
-            >
-              <Phone size={18} />
-            </a>
-            <Link aria-label="Facebook" href="https://www.facebook.com" className={`inline-flex items-center justify-center p-2 transition-opacity duration-200 hover:opacity-70 ${isContactPage || isCategoryPage || isProductPage || isCartPage || isCheckoutPage || scrolled
-              ? "text-neutral-900"
-              : "text-white"
-              }`}>
-              <Facebook size={18} />
-            </Link>
-            <Link aria-label="Instagram" href="https://www.instagram.com/thehouseofalmas/" className={`inline-flex items-center justify-center p-2 transition-opacity duration-200 hover:opacity-70 ${isContactPage || isCategoryPage || isProductPage || isCartPage || isCheckoutPage || scrolled
-              ? "text-neutral-900"
-              : "text-white"
-              }`}>
-              <Instagram size={18} />
-            </Link>
-            <Link aria-label="TikTok" href="https://www.tiktok.com" target="_blank" className={`inline-flex items-center justify-center p-2 transition-opacity duration-200 hover:opacity-70 ${isContactPage || isCategoryPage || isProductPage || isCartPage || isCheckoutPage || scrolled
-              ? "text-neutral-900"
-              : "text-white"
-              }`} rel="noopener noreferrer">
-              <SiTiktok className="h-[18px] w-[18px]" />
-            </Link>
-            <Link aria-label="WhatsApp" href="https://wa.me/96100000000" target="_blank" className={`inline-flex items-center justify-center p-2 transition-opacity duration-200 hover:opacity-70 ${isContactPage || isCategoryPage || isProductPage || isCartPage || isCheckoutPage || scrolled
-              ? "text-neutral-900"
-              : "text-white"
-              }`} rel="noopener noreferrer">
-              <SiWhatsapp className="h-[18px] w-[18px]" />
-            </Link>
-            <button
-              className="inline-flex items-center justify-center p-2 transition-opacity duration-200 hover:opacity-70"
-              aria-label="Toggle menu"
-              onClick={() => setMenuOpen((s) => !s)}
-            >
-              <PanelsTopLeft size={18} className={`${isContactPage || isCategoryPage || isProductPage || isCartPage || isCheckoutPage || scrolled
-                ? "text-neutral-900"
-                : "text-white"
-                }`} />
-            </button>
-          </div>
-        </div>
 
-        {/* Hamburger + Cart (mobile) */}
-        <div className="flex items-center gap-2 md:hidden">
+          <div className="h-4 w-[1px] bg-[#5B3A82]/20 mx-1 hidden md:block"></div>
+
           <button
-            onClick={() => setCartDrawerOpen(true)}
-            className="relative inline-flex items-center justify-center p-2.5 rounded-full transition-opacity duration-200 hover:opacity-70"
-            aria-label="Open cart"
-          >
-            <Image
-              src="/cart.png"
-              alt="Cart"
-              width={40}
-              height={40}
-              className={`h-10 w-10 object-contain transition-all duration-200 ${isContactPage || isCategoryPage || isProductPage || isCartPage || isCheckoutPage
-                ? "brightness-0"
-                : scrolled
-                  ? "brightness-0"
-                  : ""
-                }`}
-            />
-            {cartCount > 0 && (
-              <span className="absolute right-1 top-1 flex h-5 w-5 items-center justify-center rounded-full bg-black text-xs font-medium text-white">
-                {cartCount > 99 ? "99+" : cartCount}
-              </span>
-            )}
-          </button>
-          <button
-            className="inline-flex items-center justify-center p-2"
+            className="flex items-center gap-3 text-[#5B3A82] hover:opacity-70 transition-opacity group"
             aria-label="Toggle menu"
             onClick={() => setMenuOpen((s) => !s)}
           >
-            <PanelsTopLeft size={18} />
+            <span className="hidden md:block text-sm uppercase tracking-widest font-medium">Menu</span>
+            <Menu size={26} strokeWidth={1.5} />
           </button>
         </div>
       </nav>
@@ -434,7 +275,7 @@ export default function Navbar() {
                   </ul>
 
                   {/* View Cart Action Bar */}
-                  <div className="w-full my-6 border-t border-b border-neutral-200/50">
+                  {/* <div className="w-full my-6 border-t border-b border-neutral-200/50">
                     <Link
                       href="/cart"
                       onClick={() => setMenuOpen(false)}
@@ -442,7 +283,7 @@ export default function Navbar() {
                     >
                       VIEW CART
                     </Link>
-                  </div>
+                  </div> */}
 
                   <ul className="space-y-0 mt-6">
                     {/* Divider above contact section */}
@@ -469,7 +310,7 @@ export default function Navbar() {
                       className="border-b border-neutral-200/50"
                     >
                       <a
-                        href="https://wa.me/96100000000"
+                        href="https://wa.me/971501916610"
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => setMenuOpen(false)}
@@ -493,13 +334,13 @@ export default function Navbar() {
                       className="border-b border-neutral-200/50"
                     >
                       <a
-                        href="tel:+96100000000"
+                        href="tel:+971501916610"
                         onClick={() => setMenuOpen(false)}
                         className="flex items-center gap-3 min-h-[48px] py-6 group"
                       >
                         <Phone className="h-4 w-4 text-neutral-400 opacity-40 group-hover:opacity-100 group-hover:text-[#5B3A82] transition-all duration-300 ease-[0.22,0.61,0.36,1]" />
                         <span className="text-[13px] font-light tracking-[0.25em] uppercase text-neutral-800 group-hover:text-[#5B3A82] transition-colors duration-300 ease-[0.22,0.61,0.36,1] relative inline-block after:absolute after:bottom-[-2px] after:left-0 after:h-[0.5px] after:w-0 after:bg-[#5B3A82] after:transition-all after:duration-300 after:ease-[0.22,0.61,0.36,1] group-hover:after:w-full">
-                          +961 00 000 000
+                          +971501916610
                         </span>
                       </a>
                     </motion.li>
@@ -560,7 +401,10 @@ export default function Navbar() {
       </AnimatePresence>
 
       {/* Cart Drawer */}
-      <CartDrawer isOpen={cartDrawerOpen} onClose={() => setCartDrawerOpen(false)} />
+      {/* <CartDrawer isOpen={cartDrawerOpen} onClose={() => setCartDrawerOpen(false)} /> */}
+
+      {/* Search Overlay */}
+      <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </motion.header>
   );
 }

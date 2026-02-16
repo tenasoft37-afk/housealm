@@ -54,13 +54,15 @@ const montserrat = Montserrat({
   weight: ["400", "500", "600"],
 });
 
+
+
 export const metadata: Metadata = {
   title: "House of Almas | Fine jewelry & Bespoke Designs",
   description:
-    "Lebanon-based fine jewelry brand focused on unique designs and high-quality materials.",
+    "Fine jewelry brand focused on unique designs and high-quality materials.",
   keywords: [
-    "fine jewelry Lebanon",
-    "bespoke jewelry Lebanon",
+    "fine jewelry ",
+    "bespoke jewelry",
     "House of Almas",
   ],
   viewport: {
@@ -71,7 +73,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "House of Almas | Fine jewelry & Bespoke Designs",
     description:
-      "Lebanon-based fine jewelry brand focused on unique designs and high-quality materials.",
+      " Fine jewelry brand focused on unique designs and high-quality materials.",
     type: "website",
   },
 };

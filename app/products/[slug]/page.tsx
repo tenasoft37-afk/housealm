@@ -120,6 +120,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 image: transformedProduct.image,
                 options: transformedProduct.options,
                 stock: transformedProduct.stock,
+                category: product.category || "",
               }} />
             </div>
           </div>

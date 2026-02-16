@@ -9,6 +9,7 @@ export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
     const featured = searchParams.get('featured');
+    const search = searchParams.get('search');
 
     const db = await getDb();
     const collection = db.collection('Product');
@@ -17,6 +18,14 @@ export async function GET(request: Request) {
     const query: any = {};
     if (featured === 'true') {
       query.isFeatured = true;
+    }
+
+    if (search) {
+      const searchRegex = new RegExp(search, 'i'); // Case-insensitive
+      query.$or = [
+        { title: { $regex: searchRegex } },
+        { description: { $regex: searchRegex } }
+      ];
     }
 
     const products = await collection
