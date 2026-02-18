@@ -65,7 +65,7 @@ export default function AboutUs() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                         viewport={{ once: true, margin: "-50px" }}
-                        className={`flex flex-col justify-center ${!image ? 'max-w-4xl mx-auto text-center' : ''}`}
+                        className={`flex flex-col justify-center ${!image ? 'max-w-4xl mx-auto text-left md:text-center' : ''}`}
                     >
                         <span className="text-[#5B3A82] text-sm font-medium tracking-[0.2em] uppercase mb-4 block">
                             Our Story
