@@ -79,7 +79,7 @@ const SocialIcon = ({
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="p-2 rounded-lg bg-white/10 dark:bg-neutral-800/20 backdrop-blur-sm border border-white/20 dark:border-neutral-700/30 hover:border-[#5B3A82]/50 transition-all duration-300"
+    className="p-2 rounded-lg bg-white/10 backdrop-blur-sm border border-neutral-200/50 hover:border-[#5B3A82]/50 transition-all duration-300"
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
@@ -91,7 +91,7 @@ const SocialIcon = ({
     }}
     whileTap={{ scale: 0.95 }}
   >
-    <Icon className="w-5 h-5 text-neutral-600 dark:text-neutral-300 hover:text-[#5B3A82] transition-colors duration-300" />
+    <Icon className="w-5 h-5 text-neutral-600 hover:text-[#5B3A82] transition-colors duration-300" />
     <span className="sr-only">{label}</span>
   </motion.a>
 );
@@ -100,7 +100,7 @@ const Footer = () => (
   <>
     <footer className="relative pt-20 md:pt-28 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-[#F7F7F7] dark:from-neutral-900/80 dark:via-neutral-800/60 dark:to-neutral-900/80" />
+      <div className="absolute inset-0 bg-[#F7F7F7]" />
 
       {/* Animated Gradient Divider */}
       <motion.div
@@ -155,14 +155,14 @@ const Footer = () => (
           {/* Copyright and Email */}
           <div className="flex flex-col lg:flex-row items-center gap-3 lg:gap-6 text-center lg:text-left">
             <motion.div
-              className="text-sm text-[#171717] dark:text-neutral-300 flex items-center justify-center gap-1.5 flex-wrap px-2"
+              className="text-sm text-[#171717] flex items-center justify-center gap-1.5 flex-wrap px-2"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <span className="font-medium">Copyright © {new Date().getFullYear()} House of Almas.</span>
-              <span className="text-[#444444] dark:text-neutral-400 ml-3 md:ml-0">All Rights Reserved.</span>
+              <span className="text-[#444444] ml-3 md:ml-0">All Rights Reserved.</span>
               <motion.div
                 className="inline-flex items-center"
                 animate={{ scale: [1, 1.2, 1] }}
@@ -173,11 +173,11 @@ const Footer = () => (
             </motion.div>
 
             {/* Divider for large screens */}
-            <div className="hidden lg:block text-neutral-300 dark:text-neutral-600">|</div>
+            <div className="hidden lg:block text-neutral-300">|</div>
 
             <motion.a
               href="mailto:houseofalmas@hotmail.com"
-              className="inline-flex items-center gap-2 text-sm text-[#171717] hover:text-[#5B3A82] transition-all duration-300 px-3 py-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800/50 hover:underline"
+              className="inline-flex items-center gap-2 text-sm text-[#171717] hover:text-[#5B3A82] transition-all duration-300 px-3 py-2 rounded-lg hover:bg-neutral-100 hover:underline"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}

@@ -7,7 +7,7 @@ import CommunityGrid from "@/components/Community/CommunityGrid";
 import Categories from "@/components/Categories";
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-zinc-50 via-white to-zinc-100 dark:from-zinc-950 dark:via-black dark:to-zinc-900">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-zinc-50 via-white to-zinc-100">
       <Navbar />
       <main className="flex-1">
         <Hero />

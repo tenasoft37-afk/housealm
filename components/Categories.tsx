@@ -106,7 +106,7 @@ export default function Categories() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               <div className="absolute bottom-4 right-4 rounded-sm bg-white px-4 py-2 shadow-lg transition-transform duration-300 group-hover:scale-105">
-                <span className="text-sm font-medium text-foreground">{categories[0].name}</span>
+                <span className="text-sm font-medium text-neutral-900">{categories[0].name}</span>
               </div>
             </Link>
           )}
@@ -127,7 +127,7 @@ export default function Categories() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               <div className="absolute bottom-4 right-4 rounded-sm bg-white px-4 py-2 shadow-lg transition-transform duration-300 group-hover:scale-105">
-                <span className="text-sm font-medium text-foreground">{categories[1].name}</span>
+                <span className="text-sm font-medium text-neutral-900">{categories[1].name}</span>
               </div>
             </Link>
           )}
@@ -149,7 +149,7 @@ export default function Categories() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                 <div className="absolute bottom-4 right-4 rounded-sm bg-white px-4 py-2 shadow-lg transition-transform duration-300 group-hover:scale-105">
-                  <span className="text-sm font-medium text-foreground">{categories[2].name}</span>
+                  <span className="text-sm font-medium text-neutral-900">{categories[2].name}</span>
                 </div>
               </Link>
               <Link
@@ -166,7 +166,7 @@ export default function Categories() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                 <div className="absolute bottom-4 right-4 rounded-sm bg-white px-4 py-2 shadow-lg transition-transform duration-300 group-hover:scale-105">
-                  <span className="text-sm font-medium text-foreground">{categories[3].name}</span>
+                  <span className="text-sm font-medium text-neutral-900">{categories[3].name}</span>
                 </div>
               </Link>
             </div>
@@ -188,7 +188,7 @@ export default function Categories() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               <div className="absolute bottom-4 right-4 rounded-sm bg-white px-4 py-2 shadow-lg transition-transform duration-300 group-hover:scale-105">
-                <span className="text-sm font-medium text-foreground">{categories[4].name}</span>
+                <span className="text-sm font-medium text-neutral-900">{categories[4].name}</span>
               </div>
             </Link>
           )}
@@ -211,7 +211,7 @@ export default function Categories() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               <div className="absolute bottom-4 right-4 rounded-sm bg-white px-4 py-2 shadow-lg transition-transform duration-300 group-hover:scale-105">
-                <span className="text-sm font-medium text-foreground">{category.name}</span>
+                <span className="text-sm font-medium text-neutral-900">{category.name}</span>
               </div>
             </Link>
           ))}

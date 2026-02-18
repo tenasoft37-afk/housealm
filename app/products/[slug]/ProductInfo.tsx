@@ -6,6 +6,7 @@ import AddToCartNotification from "@/components/AddToCartNotification";
 import { useCart } from "@/contexts/CartContext";
 import EnquireModal from "@/components/EnquireModal";
 import BookingModal from "@/components/BookingModal";
+import PhoneOrderModal from "@/components/PhoneOrderModal";
 import { ChevronDown, Leaf, MessageCircleQuestion, Sparkles, ConciergeBell, Phone } from "lucide-react";
 import { CiCircleInfo } from "react-icons/ci";
 import { motion, AnimatePresence } from "framer-motion";
@@ -103,6 +104,7 @@ export default function ProductInfo({ product }: ProductInfoProps) {
   // Modal states
   const [isEnquireModalOpen, setIsEnquireModalOpen] = useState(false);
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+  const [isPhoneOrderModalOpen, setIsPhoneOrderModalOpen] = useState(false);
 
   const toggleSection = (section: string) => {
     setOpenSection(openSection === section ? null : section);
@@ -189,6 +191,18 @@ export default function ProductInfo({ product }: ProductInfoProps) {
         }}
       />
 
+      {/* Phone Order Modal */}
+      <PhoneOrderModal
+        isOpen={isPhoneOrderModalOpen}
+        onClose={() => setIsPhoneOrderModalOpen(false)}
+        product={{
+          title: product.title,
+          image: product.image,
+          sku: product.sku,
+          category: product.category || "",
+        }}
+      />
+
       {/* Notification */}
       {showNotification && (
         <AddToCartNotification
@@ -260,14 +274,14 @@ export default function ProductInfo({ product }: ProductInfoProps) {
             <span>Appointment Booking</span>
           </button>
 
-          <a
-            href="tel:+971501916610"
+          <button
+            onClick={() => setIsPhoneOrderModalOpen(true)}
             className="flex items-center gap-4 text-[13px] font-light uppercase tracking-[0.15em] text-[#5B3A82] hover:opacity-70 transition-opacity group"
             style={{ fontFamily: 'var(--font-libre-franklin)' }}
           >
             <Phone className="h-[20px] w-[20px] text-[#5B3A82]" strokeWidth={1.5} />
             <span>Order by Phone</span>
-          </a>
+          </button>
         </div>
 
         {/* Accordions */}

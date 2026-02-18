@@ -135,22 +135,32 @@ export default function BookingModal({ isOpen, onClose, product }: BookingModalP
                             <div className="flex gap-4">
                                 <div className="flex-1 relative">
                                     <input
-                                        type="date"
+                                        type="text"
                                         name="date"
+                                        placeholder="Pick a Date"
                                         value={formData.date}
                                         onChange={handleChange}
+                                        onFocus={(e) => (e.target.type = "date")}
+                                        onBlur={(e) => {
+                                            if (!e.target.value) e.target.type = "text";
+                                        }}
                                         required
-                                        className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 focus:border-[#5B3A82] focus:outline-none uppercase"
+                                        className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 focus:border-[#5B3A82] focus:outline-none uppercase placeholder:text-neutral-400"
                                     />
                                 </div>
                                 <div className="flex-1 relative">
                                     <input
-                                        type="time"
+                                        type="text"
                                         name="time"
+                                        placeholder="Pick a Time"
                                         value={formData.time}
                                         onChange={handleChange}
+                                        onFocus={(e) => (e.target.type = "time")}
+                                        onBlur={(e) => {
+                                            if (!e.target.value) e.target.type = "text";
+                                        }}
                                         required
-                                        className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 focus:border-[#5B3A82] focus:outline-none uppercase"
+                                        className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 focus:border-[#5B3A82] focus:outline-none uppercase placeholder:text-neutral-400"
                                     />
                                 </div>
                             </div>

@@ -121,12 +121,12 @@ export default function Navbar() {
         y: isNavbarHidden ? -120 : 0
       }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className={`border-t-[5px] border-[#5B3A82] sticky top-0 left-0 w-full z-50 transition-all duration-300 bg-white dark:bg-neutral-900 shadow-sm ${isNavbarHidden ? 'pointer-events-none' : ''}`}
+      className={`border-t-[5px] border-[#5B3A82] sticky top-0 left-0 w-full z-50 transition-all duration-300 bg-white shadow-sm ${isNavbarHidden ? 'pointer-events-none' : ''}`}
     >
       {/* Announcement Bar Removed */}
 
       <nav
-        className={`mx-auto flex max-w-7xl items-center justify-between px-4 py-2 md:px-8 transition-[padding] duration-300 text-neutral-900 dark:text-white`}
+        className={`mx-auto flex max-w-7xl items-center justify-between px-4 py-2 md:px-8 transition-[padding] duration-300 text-neutral-900`}
       >
         {/* Left: Logo + Name */}
         <Link href="/" className="flex items-center relative">
@@ -272,6 +272,38 @@ export default function Navbar() {
                         </Link>
                       </motion.li>
                     ))}
+
+                    {/* About Us */}
+                    <motion.li
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{
+                        duration: 0.4,
+                        delay: 0.15 + categories.length * 0.05,
+                        ease: [0.22, 0.61, 0.36, 1],
+                      }}
+                      className="border-b border-neutral-200/50"
+                    >
+                      <Link
+                        href="/about"
+                        onClick={() => setMenuOpen(false)}
+                        className="flex items-center justify-between min-h-[48px] py-6 group"
+                      >
+                        <span className="text-[15px] font-light tracking-[0.28em] uppercase text-neutral-800 group-hover:text-[#5B3A82] transition-colors duration-300 ease-[0.22,0.61,0.36,1] relative inline-block after:absolute after:bottom-[-2px] after:left-0 after:h-[0.5px] after:w-0 after:bg-[#5B3A82] after:transition-all after:duration-300 after:ease-[0.22,0.61,0.36,1] group-hover:after:w-full">
+                          ABOUT US
+                        </span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="w-4 h-4 text-neutral-400 group-hover:text-[#5B3A82] transition-colors duration-300 ease-[0.22,0.61,0.36,1]"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                      </Link>
+                    </motion.li>
                   </ul>
 
                   {/* View Cart Action Bar */}
