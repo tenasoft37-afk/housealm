@@ -135,33 +135,29 @@ export default function BookingModal({ isOpen, onClose, product }: BookingModalP
                             <div className="flex gap-4">
                                 <div className="flex-1 relative">
                                     <input
-                                        type="text"
+                                        type="date"
                                         name="date"
-                                        placeholder="Pick a Date"
                                         value={formData.date}
                                         onChange={handleChange}
-                                        onFocus={(e) => (e.target.type = "date")}
-                                        onBlur={(e) => {
-                                            if (!e.target.value) e.target.type = "text";
-                                        }}
                                         required
-                                        className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 focus:border-[#5B3A82] focus:outline-none uppercase placeholder:text-neutral-400"
+                                        className={`w-full border border-neutral-200 p-3 text-sm font-light focus:border-[#5B3A82] focus:outline-none uppercase peer ${!formData.date ? 'text-transparent' : 'text-neutral-600'}`}
                                     />
+                                    <span className={`absolute left-3 top-3 text-sm font-light text-neutral-400 pointer-events-none uppercase transition-opacity peer-focus:opacity-0 ${!formData.date ? 'opacity-100' : 'opacity-0'}`}>
+                                        Pick a Date
+                                    </span>
                                 </div>
                                 <div className="flex-1 relative">
                                     <input
-                                        type="text"
+                                        type="time"
                                         name="time"
-                                        placeholder="Pick a Time"
                                         value={formData.time}
                                         onChange={handleChange}
-                                        onFocus={(e) => (e.target.type = "time")}
-                                        onBlur={(e) => {
-                                            if (!e.target.value) e.target.type = "text";
-                                        }}
                                         required
-                                        className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 focus:border-[#5B3A82] focus:outline-none uppercase placeholder:text-neutral-400"
+                                        className={`w-full border border-neutral-200 p-3 text-sm font-light focus:border-[#5B3A82] focus:outline-none uppercase peer ${!formData.time ? 'text-transparent' : 'text-neutral-600'}`}
                                     />
+                                    <span className={`absolute left-3 top-3 text-sm font-light text-neutral-400 pointer-events-none uppercase transition-opacity peer-focus:opacity-0 ${!formData.time ? 'opacity-100' : 'opacity-0'}`}>
+                                        Pick a Time
+                                    </span>
                                 </div>
                             </div>
 
