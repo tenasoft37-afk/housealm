@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 const defaultTitle = "House of Almas logo.";
 const defaultImage = "/logo1.png";
 const defaultDescription =
-    "Welcome to House of Almas. We believe true beauty is grounded in nature. Our mission is simple: to craft premium organic skincare that honors both your skin and the earth.\n\nWe scrupulously select the finest natural ingredients—botanical extracts, essential oils, and nutrient-rich butters—to formulate blends that rejuvenate, hydrate, and protect without compromise.\n\nEvery product is a testament to our commitment to quality, sustainability, and transparency. Experience the difference of truly natural care.";
+    "Welcome to House of Almas";
 
 export default function AboutUs() {
     const [title, setTitle] = useState(defaultTitle);
