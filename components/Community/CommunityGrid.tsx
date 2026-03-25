@@ -152,12 +152,7 @@ export default function CommunityGrid() {
                     </div>
                 )}
 
-                {/* Error State */}
-                {error && (
-                    <div className="text-center py-12">
-                        <p className="text-red-600">Failed to load Instagram posts. Please try again later.</p>
-                    </div>
-                )}
+
 
                 {/* Grid - Fluidly Responsive */}
                 {!loading && !error && displayedPosts.length > 0 && (

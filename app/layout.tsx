@@ -3,7 +3,6 @@ import "./globals.css";
 
 // import MetaPixel from "@/app/components/MetaPixel";
 import { CartProvider } from "@/contexts/CartContext";
-import LoadingScreen from "@/components/LoadingScreen";
 
 import {
   Inter,
@@ -91,7 +90,6 @@ export default function RootLayout({
         {/* Meta Pixel must be inside body */}
         {/* <MetaPixel /> */}
 
-        <LoadingScreen />
 
         <CartProvider>{children}</CartProvider>
       </body>

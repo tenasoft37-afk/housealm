@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Menu, X, Phone, Facebook, Instagram } from "lucide-react";
+import { Search, Menu, X, Mail } from "lucide-react";
 import { SiTiktok, SiWhatsapp } from "react-icons/si";
 import SearchOverlay from "./SearchOverlay";
 
@@ -19,6 +19,7 @@ export default function Navbar() {
   // const { cartCount } = useCart();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
   // const [cartDrawerOpen, setCartDrawerOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isNavbarHidden, setIsNavbarHidden] = useState(false);
@@ -121,7 +122,7 @@ export default function Navbar() {
         y: isNavbarHidden ? -120 : 0
       }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className={`border-t-[5px] border-[#5B3A82] sticky top-0 left-0 w-full z-50 transition-all duration-300 bg-white shadow-sm ${isNavbarHidden ? 'pointer-events-none' : ''}`}
+      className={`border-t-[5px] border-black sticky top-0 left-0 w-full z-50 transition-all duration-300 bg-white shadow-sm ${isNavbarHidden ? 'pointer-events-none' : ''}`}
     >
       {/* Announcement Bar Removed */}
 
@@ -341,89 +342,63 @@ export default function Navbar() {
                       }}
                       className="border-b border-neutral-200/50"
                     >
-                      <a
-                        href="https://wa.me/971501916610"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() => setMenuOpen(false)}
-                        className="flex items-center gap-3 min-h-[48px] py-6 group"
+                      <button
+                        onClick={() => setContactOpen(!contactOpen)}
+                        className="flex items-center justify-between min-h-[48px] py-6 group w-full text-left"
                       >
-                        <SiWhatsapp className="h-4 w-4 text-neutral-400 opacity-40 group-hover:opacity-100 group-hover:text-[#5B3A82] transition-all duration-300 ease-[0.22,0.61,0.36,1]" />
-                        <span className="text-[13px] font-light tracking-[0.25em] uppercase text-neutral-800 group-hover:text-[#5B3A82] transition-colors duration-300 ease-[0.22,0.61,0.36,1] relative inline-block after:absolute after:bottom-[-2px] after:left-0 after:h-[0.5px] after:w-0 after:bg-[#5B3A82] after:transition-all after:duration-300 after:ease-[0.22,0.61,0.36,1] group-hover:after:w-full">
-                          WhatsApp Contact
+                        <span className="text-[15px] font-light tracking-[0.28em] uppercase text-neutral-800 group-hover:text-[#5B3A82] transition-colors duration-300 ease-[0.22,0.61,0.36,1] relative inline-block after:absolute after:bottom-[-2px] after:left-0 after:h-[0.5px] after:w-0 after:bg-[#5B3A82] after:transition-all after:duration-300 after:ease-[0.22,0.61,0.36,1] group-hover:after:w-full">
+                          CONTACT US
                         </span>
-                      </a>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className={`w-4 h-4 text-neutral-400 group-hover:text-[#5B3A82] transition-transform duration-300 ease-[0.22,0.61,0.36,1] ${contactOpen ? "rotate-180" : ""}`}
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                      </button>
+                      <AnimatePresence>
+                        {contactOpen && (
+                          <motion.ul
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="overflow-hidden"
+                          >
+                            <li className="border-t border-neutral-200/30">
+                              <a
+                                href="https://wa.me/971501916610"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={() => setMenuOpen(false)}
+                                className="flex items-center gap-3 min-h-[48px] py-4 pl-4 group"
+                              >
+                                <SiWhatsapp className="h-4 w-4 text-neutral-400 opacity-40 group-hover:opacity-100 group-hover:text-[#5B3A82] transition-all duration-300 ease-[0.22,0.61,0.36,1]" />
+                                <span className="text-[13px] font-light tracking-[0.25em] uppercase text-neutral-800 group-hover:text-[#5B3A82] transition-colors duration-300 ease-[0.22,0.61,0.36,1]">
+                                  WhatsApp
+                                </span>
+                              </a>
+                            </li>
+                            <li className="border-t border-neutral-200/30">
+                              <a
+                                href="mailto:houseofalmas@hotmail.com"
+                                onClick={() => setMenuOpen(false)}
+                                className="flex items-center gap-3 min-h-[48px] py-4 pl-4 group pb-6"
+                              >
+                                <Mail className="h-4 w-4 text-neutral-400 opacity-40 group-hover:opacity-100 group-hover:text-[#5B3A82] transition-all duration-300 ease-[0.22,0.61,0.36,1]" />
+                                <span className="text-[13px] font-light tracking-[0.25em] uppercase text-neutral-800 group-hover:text-[#5B3A82] transition-colors duration-300 ease-[0.22,0.61,0.36,1]">
+                                  Email Us
+                                </span>
+                              </a>
+                            </li>
+                          </motion.ul>
+                        )}
+                      </AnimatePresence>
                     </motion.li>
 
-                    <motion.li
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{
-                        duration: 0.4,
-                        delay: 0.25 + categories.length * 0.05,
-                        ease: [0.22, 0.61, 0.36, 1],
-                      }}
-                      className="border-b border-neutral-200/50"
-                    >
-                      <a
-                        href="tel:+971501916610"
-                        onClick={() => setMenuOpen(false)}
-                        className="flex items-center gap-3 min-h-[48px] py-6 group"
-                      >
-                        <Phone className="h-4 w-4 text-neutral-400 opacity-40 group-hover:opacity-100 group-hover:text-[#5B3A82] transition-all duration-300 ease-[0.22,0.61,0.36,1]" />
-                        <span className="text-[13px] font-light tracking-[0.25em] uppercase text-neutral-800 group-hover:text-[#5B3A82] transition-colors duration-300 ease-[0.22,0.61,0.36,1] relative inline-block after:absolute after:bottom-[-2px] after:left-0 after:h-[0.5px] after:w-0 after:bg-[#5B3A82] after:transition-all after:duration-300 after:ease-[0.22,0.61,0.36,1] group-hover:after:w-full">
-                          +971501916610
-                        </span>
-                      </a>
-                    </motion.li>
-
-                    <motion.li
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{
-                        duration: 0.4,
-                        delay: 0.3 + categories.length * 0.05,
-                        ease: [0.22, 0.61, 0.36, 1],
-                      }}
-                      className="border-b border-neutral-200/50"
-                    >
-                      <Link
-                        href="https://www.instagram.com/thehouseofalmas/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() => setMenuOpen(false)}
-                        className="flex items-center gap-3 min-h-[48px] py-6 group"
-                      >
-                        <Instagram className="h-4 w-4 text-neutral-400 opacity-40 group-hover:opacity-100 group-hover:text-[#5B3A82] transition-all duration-300 ease-[0.22,0.61,0.36,1]" />
-                        <span className="text-[13px] font-light tracking-[0.25em] uppercase text-neutral-800 group-hover:text-[#5B3A82] transition-colors duration-300 ease-[0.22,0.61,0.36,1] relative inline-block after:absolute after:bottom-[-2px] after:left-0 after:h-[0.5px] after:w-0 after:bg-[#5B3A82] after:transition-all after:duration-300 after:ease-[0.22,0.61,0.36,1] group-hover:after:w-full">
-                          Instagram
-                        </span>
-                      </Link>
-                    </motion.li>
-
-                    <motion.li
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{
-                        duration: 0.4,
-                        delay: 0.35 + categories.length * 0.05,
-                        ease: [0.22, 0.61, 0.36, 1],
-                      }}
-                      className="border-b border-neutral-200/50 last:border-b-0"
-                    >
-                      <Link
-                        href="https://www.facebook.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() => setMenuOpen(false)}
-                        className="flex items-center gap-3 min-h-[48px] py-6 group"
-                      >
-                        <Facebook className="h-4 w-4 text-neutral-400 opacity-40 group-hover:opacity-100 group-hover:text-[#5B3A82] transition-all duration-300 ease-[0.22,0.61,0.36,1]" />
-                        <span className="text-[13px] font-light tracking-[0.25em] uppercase text-neutral-800 group-hover:text-[#5B3A82] transition-colors duration-300 ease-[0.22,0.61,0.36,1] relative inline-block after:absolute after:bottom-[-2px] after:left-0 after:h-[0.5px] after:w-0 after:bg-[#5B3A82] after:transition-all after:duration-300 after:ease-[0.22,0.61,0.36,1] group-hover:after:w-full">
-                          Facebook
-                        </span>
-                      </Link>
-                    </motion.li>
                   </ul>
                 </motion.nav>
               </div>

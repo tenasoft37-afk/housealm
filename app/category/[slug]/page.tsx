@@ -134,7 +134,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             {/* Filter & Sort Bar - Matching latest design image */}
             <div className="mb-12 pb-2">
               <div className="flex items-center justify-between text-[#5B3A82]">
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4" style={{ display: 'none' }}>
                   {/* Custom Filter Icon (Decreasing horizontal bars) */}
                   <div className="flex flex-col gap-[3px]">
                     <div className="h-[2px] w-5 bg-current rounded-full" />
