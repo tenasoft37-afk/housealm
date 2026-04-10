@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 import { getDb } from '@/libs/mongodb';
 import { isSaleActive, getDisplayPrice } from '@/libs/productUtils';
 
-export const dynamic = 'force-dynamic';
 export const revalidate = 10;
 
 export async function GET(request: Request) {
