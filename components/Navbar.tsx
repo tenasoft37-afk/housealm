@@ -148,16 +148,16 @@ export default function Navbar() {
         <div className="flex items-center gap-6">
           <button
             aria-label="Search"
-            className="text-[#5B3A82] hover:opacity-70 transition-opacity"
+            className="text-[#000000] hover:opacity-70 transition-opacity"
             onClick={() => setIsSearchOpen(true)}
           >
             <Search size={22} strokeWidth={1.5} />
           </button>
 
-          <div className="h-4 w-[1px] bg-[#5B3A82]/20 mx-1 hidden md:block"></div>
+          <div className="h-4 w-[1px] bg-[#000000]/20 mx-1 hidden md:block"></div>
 
           <button
-            className="flex items-center gap-3 text-[#5B3A82] hover:opacity-70 transition-opacity group"
+            className="flex items-center gap-3 text-[#000000] hover:opacity-70 transition-opacity group"
             aria-label="Toggle menu"
             onClick={() => setMenuOpen((s) => !s)}
           >
@@ -213,7 +213,7 @@ export default function Navbar() {
                   {/* Close (X) icon aligned right */}
                   <button
                     onClick={() => setMenuOpen(false)}
-                    className="p-2 text-neutral-700 hover:text-[#5B3A82] transition-colors duration-300 ease-[0.22,0.61,0.36,1]"
+                    className="p-2 text-neutral-700 hover:text-[#000000] transition-colors duration-300 ease-[0.22,0.61,0.36,1]"
                     aria-label="Close menu"
                   >
                     <svg
@@ -257,7 +257,7 @@ export default function Navbar() {
                           onClick={() => setMenuOpen(false)}
                           className="flex items-center justify-between min-h-[48px] py-6 group"
                         >
-                          <span className="text-[15px] font-light tracking-[0.28em] uppercase text-neutral-800 group-hover:text-[#5B3A82] transition-colors duration-300 ease-[0.22,0.61,0.36,1] relative inline-block after:absolute after:bottom-[-2px] after:left-0 after:h-[0.5px] after:w-0 after:bg-[#5B3A82] after:transition-all after:duration-300 after:ease-[0.22,0.61,0.36,1] group-hover:after:w-full">
+                          <span className="text-[15px] font-light tracking-[0.28em] uppercase text-neutral-800 group-hover:text-[#000000] transition-colors duration-300 ease-[0.22,0.61,0.36,1] relative inline-block after:absolute after:bottom-[-2px] after:left-0 after:h-[0.5px] after:w-0 after:bg-[#000000] after:transition-all after:duration-300 after:ease-[0.22,0.61,0.36,1] group-hover:after:w-full">
                             {category.name.toUpperCase()}
                           </span>
                           <svg
@@ -266,7 +266,7 @@ export default function Navbar() {
                             viewBox="0 0 24 24"
                             strokeWidth={1.5}
                             stroke="currentColor"
-                            className="w-4 h-4 text-neutral-400 group-hover:text-[#5B3A82] transition-colors duration-300 ease-[0.22,0.61,0.36,1]"
+                            className="w-4 h-4 text-neutral-400 group-hover:text-[#000000] transition-colors duration-300 ease-[0.22,0.61,0.36,1]"
                           >
                             <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                           </svg>
@@ -290,7 +290,7 @@ export default function Navbar() {
                         onClick={() => setMenuOpen(false)}
                         className="flex items-center justify-between min-h-[48px] py-6 group"
                       >
-                        <span className="text-[15px] font-light tracking-[0.28em] uppercase text-neutral-800 group-hover:text-[#5B3A82] transition-colors duration-300 ease-[0.22,0.61,0.36,1] relative inline-block after:absolute after:bottom-[-2px] after:left-0 after:h-[0.5px] after:w-0 after:bg-[#5B3A82] after:transition-all after:duration-300 after:ease-[0.22,0.61,0.36,1] group-hover:after:w-full">
+                        <span className="text-[15px] font-light tracking-[0.28em] uppercase text-neutral-800 group-hover:text-[#000000] transition-colors duration-300 ease-[0.22,0.61,0.36,1] relative inline-block after:absolute after:bottom-[-2px] after:left-0 after:h-[0.5px] after:w-0 after:bg-[#000000] after:transition-all after:duration-300 after:ease-[0.22,0.61,0.36,1] group-hover:after:w-full">
                           ABOUT US
                         </span>
                         <svg
@@ -299,7 +299,7 @@ export default function Navbar() {
                           viewBox="0 0 24 24"
                           strokeWidth={1.5}
                           stroke="currentColor"
-                          className="w-4 h-4 text-neutral-400 group-hover:text-[#5B3A82] transition-colors duration-300 ease-[0.22,0.61,0.36,1]"
+                          className="w-4 h-4 text-neutral-400 group-hover:text-[#000000] transition-colors duration-300 ease-[0.22,0.61,0.36,1]"
                         >
                           <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                         </svg>
@@ -312,7 +312,7 @@ export default function Navbar() {
                     <Link
                       href="/cart"
                       onClick={() => setMenuOpen(false)}
-                      className="block w-full bg-[#5B3A82] text-center py-3 font-bold text-white text-[13px] tracking-[0.3em] uppercase hover:opacity-85 transition-opacity duration-300 ease-[0.22,0.61,0.36,1] min-h-[48px] flex items-center justify-center"
+                      className="block w-full bg-[#000000] text-center py-3 font-bold text-white text-[13px] tracking-[0.3em] uppercase hover:opacity-85 transition-opacity duration-300 ease-[0.22,0.61,0.36,1] min-h-[48px] flex items-center justify-center"
                     >
                       VIEW CART
                     </Link>
@@ -346,7 +346,7 @@ export default function Navbar() {
                         onClick={() => setContactOpen(!contactOpen)}
                         className="flex items-center justify-between min-h-[48px] py-6 group w-full text-left"
                       >
-                        <span className="text-[15px] font-light tracking-[0.28em] uppercase text-neutral-800 group-hover:text-[#5B3A82] transition-colors duration-300 ease-[0.22,0.61,0.36,1] relative inline-block after:absolute after:bottom-[-2px] after:left-0 after:h-[0.5px] after:w-0 after:bg-[#5B3A82] after:transition-all after:duration-300 after:ease-[0.22,0.61,0.36,1] group-hover:after:w-full">
+                        <span className="text-[15px] font-light tracking-[0.28em] uppercase text-neutral-800 group-hover:text-[#000000] transition-colors duration-300 ease-[0.22,0.61,0.36,1] relative inline-block after:absolute after:bottom-[-2px] after:left-0 after:h-[0.5px] after:w-0 after:bg-[#000000] after:transition-all after:duration-300 after:ease-[0.22,0.61,0.36,1] group-hover:after:w-full">
                           CONTACT US
                         </span>
                         <svg
@@ -355,7 +355,7 @@ export default function Navbar() {
                           viewBox="0 0 24 24"
                           strokeWidth={1.5}
                           stroke="currentColor"
-                          className={`w-4 h-4 text-neutral-400 group-hover:text-[#5B3A82] transition-transform duration-300 ease-[0.22,0.61,0.36,1] ${contactOpen ? "rotate-180" : ""}`}
+                          className={`w-4 h-4 text-neutral-400 group-hover:text-[#000000] transition-transform duration-300 ease-[0.22,0.61,0.36,1] ${contactOpen ? "rotate-180" : ""}`}
                         >
                           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                         </svg>
@@ -376,8 +376,8 @@ export default function Navbar() {
                                 onClick={() => setMenuOpen(false)}
                                 className="flex items-center gap-3 min-h-[48px] py-4 pl-4 group"
                               >
-                                <SiWhatsapp className="h-4 w-4 text-neutral-400 opacity-40 group-hover:opacity-100 group-hover:text-[#5B3A82] transition-all duration-300 ease-[0.22,0.61,0.36,1]" />
-                                <span className="text-[13px] font-light tracking-[0.25em] uppercase text-neutral-800 group-hover:text-[#5B3A82] transition-colors duration-300 ease-[0.22,0.61,0.36,1]">
+                                <SiWhatsapp className="h-4 w-4 text-neutral-400 opacity-40 group-hover:opacity-100 group-hover:text-[#000000] transition-all duration-300 ease-[0.22,0.61,0.36,1]" />
+                                <span className="text-[13px] font-light tracking-[0.25em] uppercase text-neutral-800 group-hover:text-[#000000] transition-colors duration-300 ease-[0.22,0.61,0.36,1]">
                                   WhatsApp
                                 </span>
                               </a>
@@ -388,8 +388,8 @@ export default function Navbar() {
                                 onClick={() => setMenuOpen(false)}
                                 className="flex items-center gap-3 min-h-[48px] py-4 pl-4 group pb-6"
                               >
-                                <Mail className="h-4 w-4 text-neutral-400 opacity-40 group-hover:opacity-100 group-hover:text-[#5B3A82] transition-all duration-300 ease-[0.22,0.61,0.36,1]" />
-                                <span className="text-[13px] font-light tracking-[0.25em] uppercase text-neutral-800 group-hover:text-[#5B3A82] transition-colors duration-300 ease-[0.22,0.61,0.36,1]">
+                                <Mail className="h-4 w-4 text-neutral-400 opacity-40 group-hover:opacity-100 group-hover:text-[#000000] transition-all duration-300 ease-[0.22,0.61,0.36,1]" />
+                                <span className="text-[13px] font-light tracking-[0.25em] uppercase text-neutral-800 group-hover:text-[#000000] transition-colors duration-300 ease-[0.22,0.61,0.36,1]">
                                   Email Us
                                 </span>
                               </a>

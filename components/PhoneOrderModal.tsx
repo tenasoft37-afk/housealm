@@ -37,7 +37,7 @@ export default function PhoneOrderModal({ isOpen, onClose, product }: PhoneOrder
 
                 <div className="p-8">
                     {/* Header */}
-                    <h2 className="text-center font-serif text-2xl text-[#5B3A82] mb-6">
+                    <h2 className="text-center font-serif text-2xl text-[#000000] mb-6">
                         Order by Phone
                     </h2>
 
@@ -51,7 +51,7 @@ export default function PhoneOrderModal({ isOpen, onClose, product }: PhoneOrder
                                 className="object-contain"
                             />
                         </div>
-                        <h3 className="text-center font-serif text-lg text-[#5B3A82] leading-tight">
+                        <h3 className="text-center font-serif text-lg text-[#000000] leading-tight">
                             {product.title}
                         </h3>
                         {product.category && (
@@ -69,7 +69,7 @@ export default function PhoneOrderModal({ isOpen, onClose, product }: PhoneOrder
                     <div className="space-y-4">
                         <a
                             href="tel:+971501916610"
-                            className="flex items-center justify-center gap-3 w-full bg-[#5B3A82] text-white py-4 text-[13px] font-serif uppercase tracking-widest hover:bg-[#4a2e6b] transition-colors"
+                            className="flex items-center justify-center gap-3 w-full bg-[#000000] text-white py-4 text-[13px] font-serif uppercase tracking-widest hover:bg-[#111111] transition-colors"
                         >
                             <Phone size={18} />
                             <span>Call Now</span>

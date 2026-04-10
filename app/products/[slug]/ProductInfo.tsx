@@ -51,17 +51,17 @@ const AccordionItem = ({
     <div className="border-t border-neutral-200">
       <button
         onClick={onToggle}
-        className="flex w-full items-center justify-between py-6 text-left transition-colors hover:text-[#5B3A82]"
+        className="flex w-full items-center justify-between py-6 text-left transition-colors hover:text-[#000000]"
       >
         <div className="flex items-center gap-3">
-          <Icon className="h-5 w-5 text-[#5B3A82]" strokeWidth={1.5} />
+          <Icon className="h-5 w-5 text-[#000000]" strokeWidth={1.5} />
           <span className="text-base text-neutral-600 font-normal">{title}</span>
         </div>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <ChevronDown className="h-4 w-4 text-[#5B3A82]" />
+          <ChevronDown className="h-4 w-4 text-[#000000]" />
         </motion.div>
       </button>
       <AnimatePresence initial={false}>
@@ -219,7 +219,7 @@ export default function ProductInfo({ product }: ProductInfoProps) {
       <div className="flex flex-col">
 
         {/* Title - Refined for Professional Look */}
-        <h1 className="mb-4 font-serif text-3xl md:text-4xl font-normal tracking-normal text-[#5B3A82] leading-tight">
+        <h1 className="mb-4 font-serif text-3xl md:text-4xl font-normal tracking-normal text-[#000000] leading-tight">
           {product.title}
         </h1>
 
@@ -230,12 +230,12 @@ export default function ProductInfo({ product }: ProductInfoProps) {
               <p className="text-xl font-light text-neutral-400 line-through">
                 ${product.originalPrice?.toLocaleString()}
               </p>
-              <p className="text-2xl font-light text-[#5B3A82]">
+              <p className="text-2xl font-light text-[#000000]">
                 ${product.salePrice.toLocaleString()}
               </p>
             </div>
           ) : (
-            <p className="text-2xl font-light text-[#5B3A82]">
+            <p className="text-2xl font-light text-[#000000]">
               ${product.price.toFixed(2)}
             </p>
           )}
@@ -258,28 +258,28 @@ export default function ProductInfo({ product }: ProductInfoProps) {
         <div className="mb-8 space-y-5">
           <button
             onClick={() => setIsEnquireModalOpen(true)}
-            className="flex items-center gap-4 text-[13px] font-light uppercase tracking-[0.15em] text-[#5B3A82] hover:opacity-70 transition-opacity group"
+            className="flex items-center gap-4 text-[13px] font-light uppercase tracking-[0.15em] text-[#000000] hover:opacity-70 transition-opacity group"
             style={{ fontFamily: 'var(--font-libre-franklin)' }}
           >
-            <CiCircleInfo className="h-[22px] w-[22px] text-[#5B3A82]" strokeWidth={0.5} />
+            <CiCircleInfo className="h-[22px] w-[22px] text-[#000000]" strokeWidth={0.5} />
             <span>Enquire</span>
           </button>
 
           <button
             onClick={() => setIsBookingModalOpen(true)}
-            className="flex items-center gap-4 text-[13px] font-light uppercase tracking-[0.15em] text-[#5B3A82] hover:opacity-70 transition-opacity group"
+            className="flex items-center gap-4 text-[13px] font-light uppercase tracking-[0.15em] text-[#000000] hover:opacity-70 transition-opacity group"
             style={{ fontFamily: 'var(--font-libre-franklin)' }}
           >
-            <ConciergeBell className="h-[20px] w-[20px] text-[#5B3A82]" strokeWidth={1.5} />
+            <ConciergeBell className="h-[20px] w-[20px] text-[#000000]" strokeWidth={1.5} />
             <span>Appointment Booking</span>
           </button>
 
           <button
             onClick={() => setIsPhoneOrderModalOpen(true)}
-            className="flex items-center gap-4 text-[13px] font-light uppercase tracking-[0.15em] text-[#5B3A82] hover:opacity-70 transition-opacity group"
+            className="flex items-center gap-4 text-[13px] font-light uppercase tracking-[0.15em] text-[#000000] hover:opacity-70 transition-opacity group"
             style={{ fontFamily: 'var(--font-libre-franklin)' }}
           >
-            <Phone className="h-[20px] w-[20px] text-[#5B3A82]" strokeWidth={1.5} />
+            <Phone className="h-[20px] w-[20px] text-[#000000]" strokeWidth={1.5} />
             <span>Order by Phone</span>
           </button>
         </div>
@@ -337,9 +337,9 @@ export default function ProductInfo({ product }: ProductInfoProps) {
                     <button
                       key={value}
                       onClick={() => handleOptionChange(optionKey, value)}
-                      className={`px-4 py-2 text-sm font-light transition-all focus:outline-none focus:ring-1 focus:ring-[#5B3A82] ${selectedOptions[optionKey] === value
-                        ? "bg-[#5B3A82] text-white"
-                        : "border border-neutral-200 bg-white text-neutral-600 hover:border-[#5B3A82]"
+                      className={`px-4 py-2 text-sm font-light transition-all focus:outline-none focus:ring-1 focus:ring-[#000000] ${selectedOptions[optionKey] === value
+                        ? "bg-[#000000] text-white"
+                        : "border border-neutral-200 bg-white text-neutral-600 hover:border-[#000000]"
                         }`}
                     >
                       {value}
@@ -354,7 +354,7 @@ export default function ProductInfo({ product }: ProductInfoProps) {
         {/* Out of Stock Message */}
         {product.stock <= 0 && (
           <div className="mb-8">
-            <p className="text-lg font-medium text-[#5B3A82]">
+            <p className="text-lg font-medium text-[#000000]">
               Out of Stock
             </p>
           </div>
@@ -371,7 +371,7 @@ export default function ProductInfo({ product }: ProductInfoProps) {
 
             <button
               onClick={handleAddToCart}
-              className="flex-1 rounded-full bg-[#5B3A82] h-[52px] px-8 text-[15px] font-medium text-white shadow-sm transition-all hover:bg-[#4a2e6b] hover:shadow active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50"
+              className="flex-1 rounded-full bg-[#000000] h-[52px] px-8 text-[15px] font-medium text-white shadow-sm transition-all hover:bg-[#111111] hover:shadow active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50"
             >
               Add to cart
             </button>

@@ -106,7 +106,7 @@ export default function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                         <div className="max-w-3xl mx-auto">
                             {loading ? (
                                 <div className="flex justify-center py-12">
-                                    <div className="w-6 h-6 border-2 border-[#5B3A82] border-t-transparent rounded-full animate-spin" />
+                                    <div className="w-6 h-6 border-2 border-[#000000] border-t-transparent rounded-full animate-spin" />
                                 </div>
                             ) : results.length > 0 ? (
                                 <div className="grid grid-cols-1 gap-6">
@@ -126,7 +126,7 @@ export default function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                                                 />
                                             </div>
                                             <div>
-                                                <h3 className="text-lg font-medium text-neutral-900 group-hover:text-[#5B3A82] transition-colors">
+                                                <h3 className="text-lg font-medium text-neutral-900 group-hover:text-[#000000] transition-colors">
                                                     {product.name}
                                                 </h3>
                                                 {product.categories && product.categories.length > 0 && (

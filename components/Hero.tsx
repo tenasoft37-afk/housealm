@@ -120,7 +120,7 @@ export default function Hero() {
             href="/category/all"
             className="inline-flex items-center justify-center rounded-full px-6 py-2.5 sm:px-8 sm:py-4 text-[13px] sm:text-base font-normal transition-all duration-300 hover:scale-105"
             style={{
-              backgroundColor: currentHero?.buttonColor || "#5B3A82",
+              backgroundColor: currentHero?.buttonColor || "#000000",
               color: currentHero?.buttonTextColor || "#ffffff",
               boxShadow: "0 4px 20px rgba(0,0,0,0.3)"
             }}

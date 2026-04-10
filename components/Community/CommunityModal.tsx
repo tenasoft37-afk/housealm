@@ -131,7 +131,7 @@ export default function CommunityModal({ post, isOpen, onClose, onPrevious, onNe
                         {isLongText && !isExpanded && (
                             <button
                                 onClick={() => setIsExpanded(true)}
-                                className="ml-1 text-neutral-500 font-medium hover:text-[#5B3A82]"
+                                className="ml-1 text-neutral-500 font-medium hover:text-[#000000]"
                             >
                                 more
                             </button>
@@ -150,7 +150,7 @@ export default function CommunityModal({ post, isOpen, onClose, onPrevious, onNe
                     </button>
 
                     {/* Cart Link */}
-                    <Link href="/cart" className="flex items-center gap-1 text-neutral-500 hover:text-[#5B3A82] transition-colors">
+                    <Link href="/cart" className="flex items-center gap-1 text-neutral-500 hover:text-[#000000] transition-colors">
                         <ShoppingBag size={18} />
                         <span className="text-sm">{cartCount}</span>
                     </Link>

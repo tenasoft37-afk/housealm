@@ -122,7 +122,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
         {/* Header Section - With subtle separator line */}
         <section className="w-full bg-white pt-8 pb-6 border-b border-neutral-100">
           <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#5B3A82]">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#000000]">
               {category?.title || ""}
             </h1>
           </div>
@@ -133,7 +133,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
           <div className="mx-auto max-w-7xl px-4 py-6 md:px-6 lg:px-8">
             {/* Filter & Sort Bar - Matching latest design image */}
             <div className="mb-12 pb-2">
-              <div className="flex items-center justify-between text-[#5B3A82]">
+              <div className="flex items-center justify-between text-[#000000]">
                 <div className="flex items-center gap-4" style={{ display: 'none' }}>
                   {/* Custom Filter Icon (Decreasing horizontal bars) */}
                   <div className="flex flex-col gap-[3px]">
@@ -160,7 +160,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
                 <Link
                   href="/category/all"
-                  className="px-5 py-2 rounded-full border border-[#5B3A82] text-[12px] sm:text-sm font-medium hover:bg-[#5B3A82] hover:text-white transition-all whitespace-nowrap"
+                  className="px-5 py-2 rounded-full border border-[#000000] text-[12px] sm:text-sm font-medium hover:bg-[#000000] hover:text-white transition-all whitespace-nowrap"
                 >
                   View all
                 </Link>
@@ -191,7 +191,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
                       {/* Sale Badge */}
                       {product.enableSale && product.salePrice && (
-                        <div className="absolute left-2 top-2 z-10 rounded bg-[#5B3A82] px-1.5 py-0.5 text-[9px] uppercase font-bold tracking-wider text-white">
+                        <div className="absolute left-2 top-2 z-10 rounded bg-[#000000] px-1.5 py-0.5 text-[9px] uppercase font-bold tracking-wider text-white">
                           Sale
                         </div>
                       )}
@@ -203,7 +203,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                         <h3
                           className="text-[13px] md:text-base leading-tight mb-1 line-clamp-2 min-h-[2.5em] font-sans"
                           style={{
-                            color: "#5B3A82",
+                            color: "#000000",
                             fontWeight: 400,
                           }}
                         >
@@ -256,7 +256,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                             setShowNotification(false);
                             setTimeout(() => setShowNotification(true), 10);
                           }}
-                          className="text-[#5B3A82] hover:scale-110 transition-transform flex items-center justify-center"
+                          className="text-[#000000] hover:scale-110 transition-transform flex items-center justify-center"
                           aria-label="Add to cart"
                         >
                           <ShoppingBag className="w-4 h-4 md:w-5 md:h-5" strokeWidth={1.5} />

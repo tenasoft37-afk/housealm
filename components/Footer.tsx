@@ -34,7 +34,7 @@ const BackToTopButton = () => {
   return (
     <motion.button
       onClick={scrollToTop}
-      className={`fixed bottom-6 right-6 z-50 p-3 rounded-full bg-gradient-to-r from-[#5B3A82] to-[#5B3A82] text-white shadow-lg hover:shadow-xl transition-all duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
+      className={`fixed bottom-6 right-6 z-50 p-3 rounded-full bg-gradient-to-r from-[#000000] to-[#000000] text-white shadow-lg hover:shadow-xl transition-all duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
       initial={{ scale: 0, rotate: -180 }}
       animate={{
@@ -79,7 +79,7 @@ const SocialIcon = ({
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="p-2 rounded-lg bg-white/10 backdrop-blur-sm border border-neutral-200/50 hover:border-[#5B3A82]/50 transition-all duration-300"
+    className="p-2 rounded-lg bg-white/10 backdrop-blur-sm border border-neutral-200/50 hover:border-[#000000]/50 transition-all duration-300"
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
@@ -91,7 +91,7 @@ const SocialIcon = ({
     }}
     whileTap={{ scale: 0.95 }}
   >
-    <Icon className="w-5 h-5 text-neutral-600 hover:text-[#5B3A82] transition-colors duration-300" />
+    <Icon className="w-5 h-5 text-neutral-600 hover:text-[#000000] transition-colors duration-300" />
     <span className="sr-only">{label}</span>
   </motion.a>
 );
@@ -104,7 +104,7 @@ const Footer = () => (
 
       {/* Animated Gradient Divider */}
       <motion.div
-        className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#5B3A82] to-transparent"
+        className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#000000] to-transparent"
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}
@@ -168,7 +168,7 @@ const Footer = () => (
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
               >
-                <Heart className="w-4 h-4 text-[#5B3A82] mx-0.5" fill="#5B3A82" />
+                <Heart className="w-4 h-4 text-[#000000] mx-0.5" fill="#000000" />
               </motion.div>
             </motion.div>
 
@@ -177,7 +177,7 @@ const Footer = () => (
 
             <motion.a
               href="mailto:houseofalmas@hotmail.com"
-              className="inline-flex items-center gap-2 text-sm text-[#171717] hover:text-[#5B3A82] transition-all duration-300 px-3 py-2 rounded-lg hover:bg-neutral-100 hover:underline"
+              className="inline-flex items-center gap-2 text-sm text-[#171717] hover:text-[#000000] transition-all duration-300 px-3 py-2 rounded-lg hover:bg-neutral-100 hover:underline"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}

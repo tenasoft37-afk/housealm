@@ -95,7 +95,7 @@ export default function BookingModal({ isOpen, onClose, product }: BookingModalP
 
                 <div className="p-8 md:p-10">
                     {/* Header */}
-                    <h2 className="text-center font-serif text-2xl text-[#5B3A82] mb-8">
+                    <h2 className="text-center font-serif text-2xl text-[#000000] mb-8">
                         Book an Appointment
                     </h2>
 
@@ -109,7 +109,7 @@ export default function BookingModal({ isOpen, onClose, product }: BookingModalP
                                 className="object-contain"
                             />
                         </div>
-                        <h3 className="text-center font-serif text-lg text-[#5B3A82]">
+                        <h3 className="text-center font-serif text-lg text-[#000000]">
                             {product.title}
                         </h3>
                         {product.category && (
@@ -121,10 +121,10 @@ export default function BookingModal({ isOpen, onClose, product }: BookingModalP
 
                     {isSuccess ? (
                         <div className="flex flex-col items-center justify-center py-10 text-center space-y-4">
-                            <div className="w-16 h-16 bg-[#5B3A82] rounded-full flex items-center justify-center text-white mb-2">
+                            <div className="w-16 h-16 bg-[#000000] rounded-full flex items-center justify-center text-white mb-2">
                                 <Check size={32} />
                             </div>
-                            <h3 className="font-serif text-xl text-[#5B3A82]">Request Sent!</h3>
+                            <h3 className="font-serif text-xl text-[#000000]">Request Sent!</h3>
                             <p className="text-neutral-600 font-light">We will confirm your appointment shortly.</p>
                         </div>
                     ) : (
@@ -140,7 +140,7 @@ export default function BookingModal({ isOpen, onClose, product }: BookingModalP
                                         value={formData.date}
                                         onChange={handleChange}
                                         required
-                                        className={`w-full border border-neutral-200 p-3 text-sm font-light focus:border-[#5B3A82] focus:outline-none uppercase peer ${!formData.date ? 'text-transparent' : 'text-neutral-600'}`}
+                                        className={`w-full border border-neutral-200 p-3 text-sm font-light focus:border-[#000000] focus:outline-none uppercase peer ${!formData.date ? 'text-transparent' : 'text-neutral-600'}`}
                                     />
                                     <span className={`absolute left-3 top-3 text-sm font-light text-neutral-400 pointer-events-none uppercase transition-opacity peer-focus:opacity-0 ${!formData.date ? 'opacity-100' : 'opacity-0'}`}>
                                         Pick a Date
@@ -153,7 +153,7 @@ export default function BookingModal({ isOpen, onClose, product }: BookingModalP
                                         value={formData.time}
                                         onChange={handleChange}
                                         required
-                                        className={`w-full border border-neutral-200 p-3 text-sm font-light focus:border-[#5B3A82] focus:outline-none uppercase peer ${!formData.time ? 'text-transparent' : 'text-neutral-600'}`}
+                                        className={`w-full border border-neutral-200 p-3 text-sm font-light focus:border-[#000000] focus:outline-none uppercase peer ${!formData.time ? 'text-transparent' : 'text-neutral-600'}`}
                                     />
                                     <span className={`absolute left-3 top-3 text-sm font-light text-neutral-400 pointer-events-none uppercase transition-opacity peer-focus:opacity-0 ${!formData.time ? 'opacity-100' : 'opacity-0'}`}>
                                         Pick a Time
@@ -171,7 +171,7 @@ export default function BookingModal({ isOpen, onClose, product }: BookingModalP
                                     onChange={handleChange}
                                     placeholder="Message (Optional)"
                                     rows={3}
-                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 placeholder:text-neutral-400 focus:border-[#5B3A82] focus:outline-none resize-none"
+                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 placeholder:text-neutral-400 focus:border-[#000000] focus:outline-none resize-none"
                                 />
                             </div>
 
@@ -182,7 +182,7 @@ export default function BookingModal({ isOpen, onClose, product }: BookingModalP
                                     value={formData.title}
                                     onChange={handleChange}
                                     required
-                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 focus:border-[#5B3A82] focus:outline-none bg-white appearance-none pr-10"
+                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 focus:border-[#000000] focus:outline-none bg-white appearance-none pr-10"
                                 >
                                     <option value="" disabled>Title*</option>
                                     <option value="Mr">Mr</option>
@@ -206,7 +206,7 @@ export default function BookingModal({ isOpen, onClose, product }: BookingModalP
                                     onChange={handleChange}
                                     placeholder="First Name*"
                                     required
-                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 placeholder:text-neutral-400 focus:border-[#5B3A82] focus:outline-none"
+                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 placeholder:text-neutral-400 focus:border-[#000000] focus:outline-none"
                                 />
                             </div>
 
@@ -219,7 +219,7 @@ export default function BookingModal({ isOpen, onClose, product }: BookingModalP
                                     onChange={handleChange}
                                     placeholder="Last Name*"
                                     required
-                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 placeholder:text-neutral-400 focus:border-[#5B3A82] focus:outline-none"
+                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 placeholder:text-neutral-400 focus:border-[#000000] focus:outline-none"
                                 />
                             </div>
 
@@ -232,7 +232,7 @@ export default function BookingModal({ isOpen, onClose, product }: BookingModalP
                                     onChange={handleChange}
                                     placeholder="Email*"
                                     required
-                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 placeholder:text-neutral-400 focus:border-[#5B3A82] focus:outline-none"
+                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 placeholder:text-neutral-400 focus:border-[#000000] focus:outline-none"
                                 />
                             </div>
 
@@ -245,7 +245,7 @@ export default function BookingModal({ isOpen, onClose, product }: BookingModalP
                                     onChange={handleChange}
                                     placeholder="Telephone number*"
                                     required
-                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 placeholder:text-neutral-400 focus:border-[#5B3A82] focus:outline-none"
+                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 placeholder:text-neutral-400 focus:border-[#000000] focus:outline-none"
                                 />
                             </div>
 
@@ -264,7 +264,7 @@ export default function BookingModal({ isOpen, onClose, product }: BookingModalP
                             <button
                                 type="submit"
                                 disabled={isLoading}
-                                className="w-full bg-black text-white py-4 text-[13px] font-serif uppercase tracking-widest hover:bg-[#5B3A82] transition-colors disabled:opacity-50 mt-6"
+                                className="w-full bg-black text-white py-4 text-[13px] font-serif uppercase tracking-widest hover:bg-[#000000] transition-colors disabled:opacity-50 mt-6"
                             >
                                 {isLoading ? "Sending..." : "REQUEST APPOINTMENT"}
                             </button>

@@ -109,8 +109,8 @@ export default function CommunityGrid() {
             <div className="max-w-7xl mx-auto px-4">
                 {/* Header Section */}
                 <div className="flex flex-col items-center text-center mb-8">
-                    <Mail className="w-8 h-8 text-[#5B3A82] mb-4 stroke-[1.5]" />
-                    <h2 className="text-3xl md:text-4xl font-normal text-[#5B3A82] mb-8">
+                    <Mail className="w-8 h-8 text-[#000000] mb-4 stroke-[1.5]" />
+                    <h2 className="text-3xl md:text-4xl font-normal text-[#000000] mb-8">
                         Join Our Community
                     </h2>
 
@@ -123,7 +123,7 @@ export default function CommunityGrid() {
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder="E-mail"
                                 required
-                                className="w-full px-6 py-3 rounded-full border border-gray-200 focus:outline-none focus:border-[#5B3A82] text-gray-600 placeholder:text-gray-400 disabled:opacity-50"
+                                className="w-full px-6 py-3 rounded-full border border-gray-200 focus:outline-none focus:border-[#000000] text-gray-600 placeholder:text-gray-400 disabled:opacity-50"
                                 disabled={joinStatus === 'loading' || joinStatus === 'success'}
                             />
                             {joinStatus === 'success' && (
@@ -136,7 +136,7 @@ export default function CommunityGrid() {
                         <button
                             type="submit"
                             disabled={joinStatus === 'loading' || joinStatus === 'success'}
-                            className="w-full bg-[#5B3A82] text-white rounded-full py-3 px-6 flex items-center justify-center gap-2 hover:bg-[#4a2e6b] transition-colors group disabled:opacity-70"
+                            className="w-full bg-[#000000] text-white rounded-full py-3 px-6 flex items-center justify-center gap-2 hover:bg-[#111111] transition-colors group disabled:opacity-70"
                         >
                             <span>{joinStatus === 'loading' ? 'Joining...' : 'Join'}</span>
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -147,7 +147,7 @@ export default function CommunityGrid() {
                 {/* Loading State */}
                 {loading && (
                     <div className="text-center py-12">
-                        <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-[#5B3A82] border-r-transparent"></div>
+                        <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-[#000000] border-r-transparent"></div>
                         <p className="mt-4 text-gray-600">Loading posts...</p>
                     </div>
                 )}
@@ -175,7 +175,7 @@ export default function CommunityGrid() {
                                         />
 
                                         {/* Hover/Active Overlay with Icon */}
-                                        <div className={`absolute inset-0 flex items-center justify-center transition-colors duration-300 ${isActive ? 'bg-[#5B3A82]/40' : 'bg-[#5B3A82]/0 md:group-hover:bg-[#5B3A82]/40'}`}>
+                                        <div className={`absolute inset-0 flex items-center justify-center transition-colors duration-300 ${isActive ? 'bg-[#000000]/40' : 'bg-[#000000]/0 md:group-hover:bg-[#000000]/40'}`}>
                                             {post.type === "video" ? (
                                                 <div className={`w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white flex items-center justify-center transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'}`}>
                                                     <Play size={20} className="text-white ml-0.5" fill="currentColor" />
@@ -197,7 +197,7 @@ export default function CommunityGrid() {
                                 rel="noopener noreferrer"
                                 className="inline-block"
                             >
-                                <span className="text-lg text-[#5B3A82] hover:text-[#4a2e6b] border-b border-[#C8A2C8] pb-0.5">
+                                <span className="text-lg text-[#000000] hover:text-[#111111] border-b border-[#C8A2C8] pb-0.5">
                                     @{instagramData?.accountName || 'thehouseofalmas'}
                                 </span>
                             </a>

@@ -32,8 +32,8 @@ interface Category {
 }
 
 // Colors from design image estimation
-const THEME_DARK_PURPLE = "#3D3B69"; // Dark blueish-purple for tabs and text
-const PRODUCT_NAME_COLOR = "#5B3A82";
+const THEME_DARK_PURPLE = "#000000"; // Dark blueish-purple for tabs and text
+const PRODUCT_NAME_COLOR = "#000000";
 const PRICE_COLOR = "#888888";
 
 export default function FeaturedProducts() {
@@ -222,7 +222,7 @@ export default function FeaturedProducts() {
           className="text-center text-4xl md:text-5xl mb-8 md:mb-12 font-sans tracking-tight"
           style={{
             fontWeight: 300,
-            color: "#2C2C54",
+            color: "#000000",
           }}
         >
           Meet Your Match
@@ -285,7 +285,7 @@ export default function FeaturedProducts() {
           {displayedProducts.length > 1 && (
             <button
               onClick={() => scrollCarousel('left')}
-              className="flex absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center text-[#2C2C54] hover:text-purple-700 hover:scale-110 transition-all duration-300 border border-neutral-200"
+              className="flex absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center text-[#000000] hover:text-neutral-800 hover:scale-110 transition-all duration-300 border border-neutral-200"
               aria-label="Scroll left"
             >
               <ArrowLeft className="w-5 h-5 stroke-[1.5]" />
@@ -374,7 +374,7 @@ export default function FeaturedProducts() {
                           setShowNotification(false); // Reset to ensure animation plays if already open
                           setTimeout(() => setShowNotification(true), 10);
                         }}
-                        className="text-[#5B3A82] hover:scale-110 transition-transform flex items-center justify-center"
+                        className="text-[#000000] hover:scale-110 transition-transform flex items-center justify-center"
                         aria-label="Add to cart"
                       >
                         <ShoppingBag className="w-4 h-4 md:w-5 md:h-5" strokeWidth={1.5} />
@@ -390,7 +390,7 @@ export default function FeaturedProducts() {
           {displayedProducts.length > 1 && (
             <button
               onClick={() => scrollCarousel('right')}
-              className="flex absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center text-[#2C2C54] hover:text-purple-700 hover:scale-110 transition-all duration-300 border border-neutral-200"
+              className="flex absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center text-[#000000] hover:text-neutral-800 hover:scale-110 transition-all duration-300 border border-neutral-200"
               aria-label="Scroll right"
             >
               <ArrowRight className="w-5 h-5 stroke-[1.5]" />
@@ -403,7 +403,7 @@ export default function FeaturedProducts() {
         {displayedProducts.length > 1 && (
           <div className="w-full max-w-xs mx-auto mt-2 h-1 bg-neutral-100 rounded-full overflow-hidden">
             <div
-              className="h-full bg-[#3D3B69] transition-all duration-300 ease-out rounded-full"
+              className="h-full bg-[#000000] transition-all duration-300 ease-out rounded-full"
               style={{ width: `${Math.max(15, Math.min(100, scrollProgress + 15))}%` }}
             />
           </div>

@@ -50,10 +50,10 @@ export default function AddToCartNotification({
           transition={{ duration: 0.3, ease: "easeOut" }}
           className="fixed top-4 right-4 md:bottom-8 md:top-auto md:right-8 z-[100] w-auto max-w-[90vw] md:max-w-sm"
         >
-          <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-purple-50">
+          <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-neutral-100">
 
             {/* Header - Purple Brand Style */}
-            <div className="bg-[#5B3A82] px-4 py-3 flex items-center justify-between">
+            <div className="bg-[#000000] px-4 py-3 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <div className="bg-white/20 p-1 rounded-full">
                   <Check className="h-3 w-3 text-white" strokeWidth={3} />
@@ -79,7 +79,7 @@ export default function AddToCartNotification({
                   />
                 </div>
                 <div className="flex-1 min-w-0 flex flex-col justify-center">
-                  <h3 className="text-sm font-medium text-[#5B3A82] line-clamp-1">
+                  <h3 className="text-sm font-medium text-[#000000] line-clamp-1">
                     {product.name}
                   </h3>
                   <p className="text-sm text-neutral-600 mt-0.5">
@@ -99,7 +99,7 @@ export default function AddToCartNotification({
               <Link
                 href="/cart"
                 onClick={onClose}
-                className="flex items-center justify-center gap-2 rounded-full border border-[#5B3A82] bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#5B3A82] transition-colors hover:bg-purple-50"
+                className="flex items-center justify-center gap-2 rounded-full border border-[#000000] bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#000000] transition-colors hover:bg-neutral-100"
               >
                 <ShoppingBag size={14} />
                 View Cart
@@ -107,7 +107,7 @@ export default function AddToCartNotification({
               <Link
                 href="/checkout"
                 onClick={onClose}
-                className="flex items-center justify-center rounded-full bg-[#5B3A82] px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white shadow-md shadow-purple-900/10 transition-colors hover:bg-[#4a2e6b]"
+                className="flex items-center justify-center rounded-full bg-[#000000] px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white shadow-md shadow-neutral-900/10 transition-colors hover:bg-[#111111]"
               >
                 Checkout
               </Link>

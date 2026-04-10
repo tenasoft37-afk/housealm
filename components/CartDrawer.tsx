@@ -87,7 +87,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
               maxHeight: "100dvh"
             }}
           >
-            <div className="flex h-full flex-col relative text-[#5B3A82]">
+            <div className="flex h-full flex-col relative text-[#000000]">
 
               {/* Header */}
               <div className="flex items-center justify-between border-b border-neutral-100 px-6 py-5 flex-shrink-0 bg-white">
@@ -101,7 +101,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                 </button>
 
                 {/* Center Title - Purple with Icon */}
-                <div className="flex items-center gap-2 text-[#5B3A82]">
+                <div className="flex items-center gap-2 text-[#000000]">
                   <ShoppingBag className="w-5 h-5" />
                   <h2 className="text-lg font-normal mb-0.5">
                     Cart ({cartCount})
@@ -120,7 +120,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                       <ShoppingBag size={40} />
                     </div>
                     <p className="text-neutral-400">Your cart is currently empty.</p>
-                    <button onClick={onClose} className="text-[#5B3A82] font-medium hover:underline">Start Shopping</button>
+                    <button onClick={onClose} className="text-[#000000] font-medium hover:underline">Start Shopping</button>
                   </div>
                 ) : (
                   <div className="space-y-8">
@@ -162,7 +162,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                                 onClick={() =>
                                   handleQuantityChange(item.id, item.quantity - 1)
                                 }
-                                className="flex h-7 w-8 items-center justify-center text-[#5B3A82] hover:bg-purple-50 rounded-full transition-colors"
+                                className="flex h-7 w-8 items-center justify-center text-[#000000] hover:bg-neutral-100 rounded-full transition-colors"
                               >
                                 <Minus className="h-3 w-3" />
                               </button>
@@ -173,7 +173,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                                 onClick={() =>
                                   handleQuantityChange(item.id, item.quantity + 1)
                                 }
-                                className="flex h-7 w-8 items-center justify-center text-[#5B3A82] hover:bg-purple-50 rounded-full transition-colors"
+                                className="flex h-7 w-8 items-center justify-center text-[#000000] hover:bg-neutral-100 rounded-full transition-colors"
                               >
                                 <Plus className="h-3 w-3" />
                               </button>
@@ -182,7 +182,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                             {/* Remove Button with Trash Icon */}
                             <button
                               onClick={() => removeFromCart(item.id)}
-                              className="flex items-center gap-2 text-xs text-[#5B3A82] hover:text-red-500 transition-colors"
+                              className="flex items-center gap-2 text-xs text-[#000000] hover:text-red-500 transition-colors"
                             >
                               <Trash2 size={14} />
                               <span>Remove</span>
@@ -205,7 +205,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                 >
                   {/* Options Grid - Order note | View cart */}
                   <div className="grid grid-cols-2 border-t border-b border-neutral-50 divide-x divide-neutral-50">
-                    <button className="flex items-center justify-center gap-2 py-4 text-xs font-medium text-[#5B3A82] hover:bg-purple-50 transition-colors">
+                    <button className="flex items-center justify-center gap-2 py-4 text-xs font-medium text-[#000000] hover:bg-neutral-100 transition-colors">
                       <FileText size={16} />
                       Order note
                     </button>
@@ -215,7 +215,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                         onClose();
                         router.push("/cart");
                       }}
-                      className="flex items-center justify-center gap-2 py-4 text-xs font-medium text-[#5B3A82] hover:bg-purple-50 transition-colors"
+                      className="flex items-center justify-center gap-2 py-4 text-xs font-medium text-[#000000] hover:bg-neutral-100 transition-colors"
                     >
                       <ShoppingBag size={16} />
                       View cart
@@ -225,8 +225,8 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                   {/* Total & Checkout */}
                   <div className="p-6 pb-8">
                     <div className="flex justify-between items-center mb-6">
-                      <span className="text-[#5B3A82] text-sm uppercase font-medium">TOTAL</span>
-                      <span className="text-[#5B3A82] text-lg font-medium">${totalPrice.toFixed(2)}</span>
+                      <span className="text-[#000000] text-sm uppercase font-medium">TOTAL</span>
+                      <span className="text-[#000000] text-lg font-medium">${totalPrice.toFixed(2)}</span>
                     </div>
 
                     <button
@@ -234,7 +234,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                         onClose();
                         router.push("/checkout");
                       }}
-                      className="w-full rounded-full bg-[#483063] py-4 text-center text-sm font-medium text-white shadow-lg hover:bg-[#5B3A82] transition-all"
+                      className="w-full rounded-full bg-[#000000] py-4 text-center text-sm font-medium text-white shadow-lg hover:bg-[#000000] transition-all"
                     >
                       Checkout
                     </button>

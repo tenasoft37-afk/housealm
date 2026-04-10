@@ -93,7 +93,7 @@ export default function EnquireModal({ isOpen, onClose, product }: EnquireModalP
 
                 <div className="p-8 md:p-10">
                     {/* Header */}
-                    <h2 className="text-center font-serif text-2xl text-[#5B3A82] mb-8">
+                    <h2 className="text-center font-serif text-2xl text-[#000000] mb-8">
                         Online Enquiry
                     </h2>
 
@@ -107,7 +107,7 @@ export default function EnquireModal({ isOpen, onClose, product }: EnquireModalP
                                 className="object-contain"
                             />
                         </div>
-                        <h3 className="text-center font-serif text-lg text-[#5B3A82]">
+                        <h3 className="text-center font-serif text-lg text-[#000000]">
                             {product.title}
                         </h3>
                         {product.material && (
@@ -119,10 +119,10 @@ export default function EnquireModal({ isOpen, onClose, product }: EnquireModalP
 
                     {isSuccess ? (
                         <div className="flex flex-col items-center justify-center py-10 text-center space-y-4">
-                            <div className="w-16 h-16 bg-[#5B3A82] rounded-full flex items-center justify-center text-white mb-2">
+                            <div className="w-16 h-16 bg-[#000000] rounded-full flex items-center justify-center text-white mb-2">
                                 <Check size={32} />
                             </div>
-                            <h3 className="font-serif text-xl text-[#5B3A82]">Enquiry Sent!</h3>
+                            <h3 className="font-serif text-xl text-[#000000]">Enquiry Sent!</h3>
                             <p className="text-neutral-600 font-light">Thank you. We will be in touch shortly.</p>
                         </div>
                     ) : (
@@ -136,7 +136,7 @@ export default function EnquireModal({ isOpen, onClose, product }: EnquireModalP
                                     onChange={handleChange}
                                     placeholder="Enquiry Message"
                                     rows={4}
-                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 placeholder:text-neutral-400 focus:border-[#5B3A82] focus:outline-none resize-none"
+                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 placeholder:text-neutral-400 focus:border-[#000000] focus:outline-none resize-none"
                                 />
                             </div>
 
@@ -149,7 +149,7 @@ export default function EnquireModal({ isOpen, onClose, product }: EnquireModalP
                                     value={formData.title}
                                     onChange={handleChange}
                                     required
-                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 focus:border-[#5B3A82] focus:outline-none bg-white appearance-none pr-10"
+                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 focus:border-[#000000] focus:outline-none bg-white appearance-none pr-10"
                                 >
                                     <option value="" disabled>Title*</option>
                                     <option value="Mr">Mr</option>
@@ -173,7 +173,7 @@ export default function EnquireModal({ isOpen, onClose, product }: EnquireModalP
                                     onChange={handleChange}
                                     placeholder="First Name*"
                                     required
-                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 placeholder:text-neutral-400 focus:border-[#5B3A82] focus:outline-none"
+                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 placeholder:text-neutral-400 focus:border-[#000000] focus:outline-none"
                                 />
                             </div>
 
@@ -186,7 +186,7 @@ export default function EnquireModal({ isOpen, onClose, product }: EnquireModalP
                                     onChange={handleChange}
                                     placeholder="Last Name*"
                                     required
-                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 placeholder:text-neutral-400 focus:border-[#5B3A82] focus:outline-none"
+                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 placeholder:text-neutral-400 focus:border-[#000000] focus:outline-none"
                                 />
                             </div>
 
@@ -199,7 +199,7 @@ export default function EnquireModal({ isOpen, onClose, product }: EnquireModalP
                                     onChange={handleChange}
                                     placeholder="Email*"
                                     required
-                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 placeholder:text-neutral-400 focus:border-[#5B3A82] focus:outline-none"
+                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 placeholder:text-neutral-400 focus:border-[#000000] focus:outline-none"
                                 />
                             </div>
 
@@ -212,7 +212,7 @@ export default function EnquireModal({ isOpen, onClose, product }: EnquireModalP
                                     onChange={handleChange}
                                     placeholder="Telephone number*"
                                     required
-                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 placeholder:text-neutral-400 focus:border-[#5B3A82] focus:outline-none"
+                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 placeholder:text-neutral-400 focus:border-[#000000] focus:outline-none"
                                 />
                             </div>
 
@@ -222,7 +222,7 @@ export default function EnquireModal({ isOpen, onClose, product }: EnquireModalP
                                     name="topic"
                                     value={formData.topic}
                                     onChange={handleChange}
-                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 focus:border-[#5B3A82] focus:outline-none bg-white appearance-none pr-10"
+                                    className="w-full border border-neutral-200 p-3 text-sm font-light text-neutral-600 focus:border-[#000000] focus:outline-none bg-white appearance-none pr-10"
                                 >
                                     <option value="Request an appointment">Request an appointment</option>
                                     <option value="Product Details">Product Details</option>
@@ -253,7 +253,7 @@ export default function EnquireModal({ isOpen, onClose, product }: EnquireModalP
                             <button
                                 type="submit"
                                 disabled={isLoading}
-                                className="w-full bg-black text-white py-4 text-[13px] font-serif uppercase tracking-widest hover:bg-[#5B3A82] transition-colors disabled:opacity-50 mt-6"
+                                className="w-full bg-black text-white py-4 text-[13px] font-serif uppercase tracking-widest hover:bg-[#000000] transition-colors disabled:opacity-50 mt-6"
                             >
                                 {isLoading ? "Sending..." : "SEND ENQUIRY"}
                             </button>

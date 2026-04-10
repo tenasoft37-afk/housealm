@@ -67,7 +67,7 @@ export default function AboutUs() {
                         viewport={{ once: true, margin: "-50px" }}
                         className={`flex flex-col justify-center ${!image ? 'max-w-4xl mx-auto text-left md:text-center' : ''}`}
                     >
-                        <span className="text-[#5B3A82] text-sm font-medium tracking-[0.2em] uppercase mb-4 block">
+                        <span className="text-[#000000] text-sm font-medium tracking-[0.2em] uppercase mb-4 block">
                             Our Story
                         </span>
 
@@ -84,7 +84,7 @@ export default function AboutUs() {
                         </div>
 
                         <div className={`mt-10 ${!image ? 'flex flex-col items-center' : ''}`}>
-                            <div className="h-px w-24 bg-[#5B3A82]/30 mb-6"></div>
+                            <div className="h-px w-24 bg-[#000000]/30 mb-6"></div>
                             <p className="font-playfair italic text-xl text-neutral-800">
                                 House of Almas Team
                             </p>

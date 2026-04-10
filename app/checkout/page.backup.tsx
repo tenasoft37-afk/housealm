@@ -370,19 +370,19 @@ Payment Method: Cash on Delivery`;
       <Navbar />
       <main className="flex-1 pt-24 md:pt-28 lg:pt-32">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <h1 className="mb-12 text-center font-serif text-3xl font-normal tracking-wide text-[#5B3A82] md:text-4xl" style={{ fontFamily: 'var(--font-lora), serif' }}>
+          <h1 className="mb-12 text-center font-serif text-3xl font-normal tracking-wide text-[#000000] md:text-4xl" style={{ fontFamily: 'var(--font-lora), serif' }}>
             Checkout
           </h1>
 
           {isSuccess ? (
             <div className="mx-auto max-w-2xl px-4">
               <div className="rounded-3xl border border-purple-100 bg-white p-12 text-center shadow-xl">
-                <div className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-full bg-purple-50 text-[#5B3A82]">
+                <div className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-full bg-neutral-100 text-[#000000]">
                   <svg className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h2 className="mb-4 text-2xl font-medium text-[#5B3A82]">
+                <h2 className="mb-4 text-2xl font-medium text-[#000000]">
                   Order Sent Successfully!
                 </h2>
                 <p className="mb-8 text-neutral-500 font-light leading-relaxed">
@@ -390,7 +390,7 @@ Payment Method: Cash on Delivery`;
                 </p>
                 <button
                   onClick={() => router.push("/")}
-                  className="w-full rounded-full bg-[#483063] px-8 py-4 text-sm font-medium text-white shadow-lg transition-all hover:bg-[#5B3A82]"
+                  className="w-full rounded-full bg-[#000000] px-8 py-4 text-sm font-medium text-white shadow-lg transition-all hover:bg-[#000000]"
                 >
                   Continue Shopping
                 </button>
@@ -403,8 +403,8 @@ Payment Method: Cash on Delivery`;
                 <div className="lg:col-span-3 space-y-8 bg-white border border-neutral-100 px-4 py-8 sm:px-6 lg:px-8 lg:py-10 rounded-3xl shadow-sm">
                   {/* Customer Information Section */}
                   <div>
-                    <h2 className="mb-8 text-xl font-medium text-[#5B3A82] flex items-center gap-2">
-                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-50 text-xs">1</span>
+                    <h2 className="mb-8 text-xl font-medium text-[#000000] flex items-center gap-2">
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-neutral-100 text-xs">1</span>
                       Customer Information
                     </h2>
 
@@ -423,7 +423,7 @@ Payment Method: Cash on Delivery`;
                           name="fullName"
                           value={formData.fullName}
                           onChange={handleInputChange}
-                          className={`w-full rounded-xl border bg-white px-5 py-3.5 text-base text-neutral-900 placeholder:text-neutral-300 transition-all focus:border-[#5B3A82] focus:outline-none focus:ring-1 focus:ring-[#5B3A82] ${errors.fullName ? "border-red-300" : "border-neutral-200"
+                          className={`w-full rounded-xl border bg-white px-5 py-3.5 text-base text-neutral-900 placeholder:text-neutral-300 transition-all focus:border-[#000000] focus:outline-none focus:ring-1 focus:ring-[#000000] ${errors.fullName ? "border-red-300" : "border-neutral-200"
                             }`}
                           placeholder="Your legal name"
                         />
@@ -450,7 +450,7 @@ Payment Method: Cash on Delivery`;
                           onChange={handlePhoneInputChange}
                           onBlur={handlePhoneBlur}
                           onKeyDown={handlePhoneKeyDown}
-                          className={`w-full rounded-xl border bg-white px-5 py-3.5 text-base text-neutral-900 placeholder:text-neutral-300 transition-all focus:border-[#5B3A82] focus:outline-none focus:ring-1 focus:ring-[#5B3A82] ${errors.phoneNumber
+                          className={`w-full rounded-xl border bg-white px-5 py-3.5 text-base text-neutral-900 placeholder:text-neutral-300 transition-all focus:border-[#000000] focus:outline-none focus:ring-1 focus:ring-[#000000] ${errors.phoneNumber
                             ? "border-red-300"
                             : "border-neutral-200"
                             }`}
@@ -467,8 +467,8 @@ Payment Method: Cash on Delivery`;
 
                   {/* Delivery Section */}
                   <div className="pt-4">
-                    <h3 className="mb-8 text-xl font-medium text-[#5B3A82] flex items-center gap-2">
-                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-50 text-xs">2</span>
+                    <h3 className="mb-8 text-xl font-medium text-[#000000] flex items-center gap-2">
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-neutral-100 text-xs">2</span>
                       Delivery Address
                     </h3>
 
@@ -507,7 +507,7 @@ Payment Method: Cash on Delivery`;
                             name="governorate"
                             value={formData.governorate}
                             onChange={handleInputChange}
-                            className={`w-full rounded-xl border bg-white px-5 py-3.5 text-base text-neutral-900 appearance-none focus:border-[#5B3A82] focus:outline-none focus:ring-1 focus:ring-[#5B3A82] ${errors.governorate
+                            className={`w-full rounded-xl border bg-white px-5 py-3.5 text-base text-neutral-900 appearance-none focus:border-[#000000] focus:outline-none focus:ring-1 focus:ring-[#000000] ${errors.governorate
                               ? "border-red-300"
                               : "border-neutral-200"
                               }`}
@@ -543,7 +543,7 @@ Payment Method: Cash on Delivery`;
                             value={formData.district}
                             onChange={handleInputChange}
                             disabled={!formData.governorate}
-                            className={`w-full rounded-xl border bg-white px-5 py-3.5 text-base text-neutral-900 appearance-none disabled:bg-neutral-50 disabled:cursor-not-allowed focus:border-[#5B3A82] focus:outline-none focus:ring-1 focus:ring-[#5B3A82] ${errors.district
+                            className={`w-full rounded-xl border bg-white px-5 py-3.5 text-base text-neutral-900 appearance-none disabled:bg-neutral-50 disabled:cursor-not-allowed focus:border-[#000000] focus:outline-none focus:ring-1 focus:ring-[#000000] ${errors.district
                               ? "border-red-300"
                               : "border-neutral-200"
                               }`}
@@ -582,7 +582,7 @@ Payment Method: Cash on Delivery`;
                           name="city"
                           value={formData.city}
                           onChange={handleInputChange}
-                          className={`w-full rounded-xl border bg-white px-5 py-3.5 text-base text-neutral-900 placeholder:text-neutral-300 focus:border-[#5B3A82] focus:outline-none focus:ring-1 focus:ring-[#5B3A82] ${errors.city ? "border-red-300" : "border-neutral-200"
+                          className={`w-full rounded-xl border bg-white px-5 py-3.5 text-base text-neutral-900 placeholder:text-neutral-300 focus:border-[#000000] focus:outline-none focus:ring-1 focus:ring-[#000000] ${errors.city ? "border-red-300" : "border-neutral-200"
                             }`}
                           placeholder="e.g. Beirut"
                         />
@@ -597,8 +597,8 @@ Payment Method: Cash on Delivery`;
 
                   {/* Address Details Section */}
                   <div className="pt-4">
-                    <h3 className="mb-8 text-xl font-medium text-[#5B3A82] flex items-center gap-2">
-                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-50 text-xs">3</span>
+                    <h3 className="mb-8 text-xl font-medium text-[#000000] flex items-center gap-2">
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-neutral-100 text-xs">3</span>
                       Address Details
                     </h3>
 
@@ -617,7 +617,7 @@ Payment Method: Cash on Delivery`;
                           name="streetName"
                           value={formData.streetName}
                           onChange={handleInputChange}
-                          className={`w-full rounded-xl border bg-white px-5 py-3.5 text-base text-neutral-900 placeholder:text-neutral-300 focus:border-[#5B3A82] focus:outline-none focus:ring-1 focus:ring-[#5B3A82] ${errors.streetName
+                          className={`w-full rounded-xl border bg-white px-5 py-3.5 text-base text-neutral-900 placeholder:text-neutral-300 focus:border-[#000000] focus:outline-none focus:ring-1 focus:ring-[#000000] ${errors.streetName
                             ? "border-red-300"
                             : "border-neutral-200"
                             }`}
@@ -644,7 +644,7 @@ Payment Method: Cash on Delivery`;
                           name="buildingName"
                           value={formData.buildingName}
                           onChange={handleInputChange}
-                          className="w-full rounded-xl border border-neutral-200 bg-white px-5 py-3.5 text-base text-neutral-900 placeholder:text-neutral-300 focus:border-[#5B3A82] focus:outline-none focus:ring-1 focus:ring-[#5B3A82]"
+                          className="w-full rounded-xl border border-neutral-200 bg-white px-5 py-3.5 text-base text-neutral-900 placeholder:text-neutral-300 focus:border-[#000000] focus:outline-none focus:ring-1 focus:ring-[#000000]"
                           placeholder="Building, floor, apartment"
                         />
                       </div>
@@ -653,19 +653,19 @@ Payment Method: Cash on Delivery`;
 
                   {/* Shipping Method Section */}
                   <div className="pt-4">
-                    <h3 className="mb-6 text-xl font-medium text-[#5B3A82] flex items-center gap-2">
-                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-50 text-xs">4</span>
+                    <h3 className="mb-6 text-xl font-medium text-[#000000] flex items-center gap-2">
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-neutral-100 text-xs">4</span>
                       Shipping Method
                     </h3>
-                    <div className="rounded-2xl border border-purple-100 bg-purple-50/30 p-5">
+                    <div className="rounded-2xl border border-purple-100 bg-neutral-100/30 p-5">
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3 text-[#5B3A82]">
+                        <div className="flex items-center gap-3 text-[#000000]">
                           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1m-6 0a1 1 0 001-1m9 1a1 1 0 01-1 1h-1m-6 0a1 1 0 01-1-1" />
                           </svg>
                           <span className="font-medium">Deliver All Over Lebanon</span>
                         </div>
-                        <span className="font-semibold text-[#5B3A82]">
+                        <span className="font-semibold text-[#000000]">
                           ${shippingCost.toFixed(2)}
                         </span>
                       </div>
@@ -676,7 +676,7 @@ Payment Method: Cash on Delivery`;
                 {/* Right Column: Order Summary & Payment - Desktop */}
                 <div className="hidden lg:block lg:col-span-2 lg:sticky lg:top-24 lg:self-start">
                   <div className="rounded-3xl border border-neutral-100 bg-white shadow-xl p-8">
-                    <h2 className="mb-8 text-xl font-medium text-[#5B3A82]">
+                    <h2 className="mb-8 text-xl font-medium text-[#000000]">
                       Order Summary
                     </h2>
 
@@ -703,9 +703,9 @@ Payment Method: Cash on Delivery`;
                               )}
                               <div className="flex justify-between items-center mt-1">
                                 <p className="text-xs text-neutral-500">
-                                  Qty: <span className="text-[#5B3A82] font-medium">{item.quantity}</span>
+                                  Qty: <span className="text-[#000000] font-medium">{item.quantity}</span>
                                 </p>
-                                <p className="text-sm font-medium text-[#5B3A82]">
+                                <p className="text-sm font-medium text-[#000000]">
                                   ${(item.price * item.quantity).toFixed(2)}
                                 </p>
                               </div>
@@ -720,11 +720,11 @@ Payment Method: Cash on Delivery`;
 
                     {/* Payment Method */}
                     <div className="mb-8 border-t border-neutral-100 pt-8">
-                      <h3 className="mb-4 text-sm font-medium text-[#5B3A82] uppercase tracking-wider">
+                      <h3 className="mb-4 text-sm font-medium text-[#000000] uppercase tracking-wider">
                         Payment Method
                       </h3>
-                      <div className="rounded-2xl border border-purple-100 bg-purple-50/20 p-4 border-dashed">
-                        <p className="text-sm font-normal text-[#5B3A82] flex items-center gap-2">
+                      <div className="rounded-2xl border border-purple-100 bg-neutral-100/20 p-4 border-dashed">
+                        <p className="text-sm font-normal text-[#000000] flex items-center gap-2">
                           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" />
                             <path fillRule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clipRule="evenodd" />
@@ -753,10 +753,10 @@ Payment Method: Cash on Delivery`;
                         </span>
                       </div>
                       <div className="flex items-center justify-between border-t border-neutral-100 pt-4">
-                        <span className="text-lg font-medium text-[#5B3A82]">
+                        <span className="text-lg font-medium text-[#000000]">
                           Total
                         </span>
-                        <span className="text-2xl font-semibold text-[#5B3A82]">
+                        <span className="text-2xl font-semibold text-[#000000]">
                           ${totalPrice.toFixed(2)}
                         </span>
                       </div>
@@ -766,7 +766,7 @@ Payment Method: Cash on Delivery`;
                     <button
                       type="submit"
                       disabled={isSubmitting || isSuccess}
-                      className="w-full rounded-full bg-[#483063] px-8 py-5 text-sm font-medium text-white shadow-xl transition-all hover:bg-[#5B3A82] disabled:cursor-not-allowed disabled:opacity-50 flex items-center justify-center gap-2"
+                      className="w-full rounded-full bg-[#000000] px-8 py-5 text-sm font-medium text-white shadow-xl transition-all hover:bg-[#000000] disabled:cursor-not-allowed disabled:opacity-50 flex items-center justify-center gap-2"
                     >
                       {isSubmitting ? "Sending..." : (
                         <>
@@ -789,15 +789,15 @@ Payment Method: Cash on Delivery`;
                     <button
                       type="button"
                       onClick={() => setIsOrderSummaryOpen(!isOrderSummaryOpen)}
-                      className="w-full flex items-center justify-between py-6 px-6 bg-purple-50/30 transition-colors duration-200 hover:bg-purple-50"
+                      className="w-full flex items-center justify-between py-6 px-6 bg-neutral-100/30 transition-colors duration-200 hover:bg-neutral-100"
                     >
                       <div className="flex items-center gap-3">
-                        <h2 className="text-base font-medium text-[#5B3A82] uppercase tracking-wider">
+                        <h2 className="text-base font-medium text-[#000000] uppercase tracking-wider">
                           Order Summary
                         </h2>
                       </div>
                       <ChevronDown
-                        className={`h-5 w-5 text-[#5B3A82] transition-transform duration-300 ${isOrderSummaryOpen ? "rotate-180" : ""
+                        className={`h-5 w-5 text-[#000000] transition-transform duration-300 ${isOrderSummaryOpen ? "rotate-180" : ""
                           }`}
                       />
                     </button>
@@ -832,9 +832,9 @@ Payment Method: Cash on Delivery`;
                                 )}
                                 <div className="flex justify-between items-center mt-1">
                                   <p className="text-xs text-neutral-400">
-                                    Qty: <span className="text-[#5B3A82]">{item.quantity}</span>
+                                    Qty: <span className="text-[#000000]">{item.quantity}</span>
                                   </p>
-                                  <p className="text-sm font-medium text-[#5B3A82]">
+                                  <p className="text-sm font-medium text-[#000000]">
                                     ${(item.price * item.quantity).toFixed(2)}
                                   </p>
                                 </div>
@@ -867,10 +867,10 @@ Payment Method: Cash on Delivery`;
                         </span>
                       </div>
                       <div className="flex items-center justify-between pt-4 border-t border-neutral-100">
-                        <span className="text-lg font-medium text-[#5B3A82]">
+                        <span className="text-lg font-medium text-[#000000]">
                           Total
                         </span>
-                        <span className="text-2xl font-semibold text-[#5B3A82]">
+                        <span className="text-2xl font-semibold text-[#000000]">
                           ${totalPrice.toFixed(2)}
                         </span>
                       </div>
@@ -882,9 +882,9 @@ Payment Method: Cash on Delivery`;
                         <h3 className="mb-3 text-xs font-medium text-neutral-400 uppercase tracking-widest">
                           Payment Method
                         </h3>
-                        <div className="rounded-xl border border-purple-100 bg-purple-50/20 p-4 border-dashed">
-                          <p className="text-sm font-normal text-[#5B3A82] flex items-center gap-2">
-                            <span className="h-2 w-2 rounded-full bg-[#5B3A82] animate-pulse"></span>
+                        <div className="rounded-xl border border-purple-100 bg-neutral-100/20 p-4 border-dashed">
+                          <p className="text-sm font-normal text-[#000000] flex items-center gap-2">
+                            <span className="h-2 w-2 rounded-full bg-[#000000] animate-pulse"></span>
                             Cash on Delivery
                           </p>
                         </div>
@@ -893,7 +893,7 @@ Payment Method: Cash on Delivery`;
                       <button
                         type="submit"
                         disabled={isSubmitting || isSuccess}
-                        className="w-full rounded-full bg-[#483063] px-6 py-5 text-sm font-medium text-white shadow-xl transition-all hover:bg-[#5B3A82] focus:outline-none focus:ring-2 focus:ring-purple-200 disabled:cursor-not-allowed disabled:opacity-50 flex items-center justify-center gap-3"
+                        className="w-full rounded-full bg-[#000000] px-6 py-5 text-sm font-medium text-white shadow-xl transition-all hover:bg-[#000000] focus:outline-none focus:ring-2 focus:ring-purple-200 disabled:cursor-not-allowed disabled:opacity-50 flex items-center justify-center gap-3"
                       >
                         {isSubmitting ? "Processing..." : (
                           <>
